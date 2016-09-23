@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Devices-->
@@ -58,7 +59,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SSID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="niO-Ph-ilx">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SSID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="niO-Ph-ilx">
                                                     <rect key="frame" x="8" y="7" width="584" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -67,6 +68,12 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="niO-Ph-ilx" firstAttribute="leading" secondItem="9bK-86-eMS" secondAttribute="leadingMargin" id="LhJ-0O-11J"/>
+                                                <constraint firstItem="niO-Ph-ilx" firstAttribute="top" secondItem="9bK-86-eMS" secondAttribute="topMargin" constant="-1" id="WJE-FS-JXd"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="niO-Ph-ilx" secondAttribute="bottom" constant="-1" id="Xb8-FC-12c"/>
+                                                <constraint firstItem="niO-Ph-ilx" firstAttribute="trailing" secondItem="9bK-86-eMS" secondAttribute="trailingMargin" id="g0C-sv-8AO"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -77,15 +84,39 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5va-Hi-KXA">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5va-Hi-KXA">
                                                     <rect key="frame" x="8" y="7" width="584" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="Wg8-k3-hL8" id="J7o-J5-k7E"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5va-Hi-KXA" firstAttribute="trailing" secondItem="S34-3p-U9J" secondAttribute="trailingMargin" id="gRi-i9-8M9"/>
+                                                <constraint firstItem="5va-Hi-KXA" firstAttribute="leading" secondItem="S34-3p-U9J" secondAttribute="leadingMargin" id="kfu-3R-i4r"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5va-Hi-KXA" secondAttribute="bottom" constant="-1" id="l6o-Uc-nN9"/>
+                                                <constraint firstItem="5va-Hi-KXA" firstAttribute="top" secondItem="S34-3p-U9J" secondAttribute="topMargin" constant="-1" id="tER-JE-Hrd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iaa-ei-NQ3">
+                                        <rect key="frame" x="0.0" y="202" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iaa-ei-NQ3" id="0j6-O6-AWU">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ccp-Bu-cFk">
+                                                    <rect key="frame" x="290" y="12" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ccp-Bu-cFk" firstAttribute="centerY" secondItem="0j6-O6-AWU" secondAttribute="centerY" id="BCi-W6-ocf"/>
+                                                <constraint firstItem="ccp-Bu-cFk" firstAttribute="centerX" secondItem="0j6-O6-AWU" secondAttribute="centerX" id="dr0-qI-mhj"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -94,7 +125,7 @@
                             <tableViewSection id="YI3-wp-ldn">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="k4m-FW-ojS" style="IBUITableViewCellStyleDefault" id="z2d-TR-P1d">
-                                        <rect key="frame" x="0.0" y="238" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="282" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z2d-TR-P1d" id="lVI-l4-cPd">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -119,6 +150,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="activityIndicator" destination="ccp-Bu-cFk" id="626-B2-KTp"/>
                         <outlet property="passwordTextField" destination="5va-Hi-KXA" id="2HO-fh-2TE"/>
                         <outlet property="ssidTextField" destination="niO-Ph-ilx" id="oCo-w9-0Fe"/>
                     </connections>

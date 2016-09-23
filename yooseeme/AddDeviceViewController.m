@@ -8,10 +8,17 @@
 
 #import "AddDeviceViewController.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
+#import "elian.h"
+#import "GCDAsyncUdpSocket.h"
 
-@interface AddDeviceViewController () <UITextFieldDelegate>
-@property IBOutlet UITextField *ssidTextField;
-@property IBOutlet UITextField *passwordTextField;
+@interface AddDeviceViewController () <UITextFieldDelegate> {
+    void *_context;
+}
+@property (nonatomic, weak) IBOutlet UITextField *ssidTextField;
+@property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, strong) GCDAsyncUdpSocket *socket;
+
 @end
 
 @implementation AddDeviceViewController
@@ -23,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self scanWiFiNetwork];
+    [self prepareSocket];
 }
 
 - (void)scanWiFiNetwork {
@@ -53,73 +61,120 @@
     return info;
 }
 
+#pragma mark - Smart connection
+
+- (void)initSmartConnection
+{
+    if (!_context) {
+        //ssid
+        const char *ssid = [self.ssidTextField.text cStringUsingEncoding:NSUTF8StringEncoding];
+        //authmode
+        int authmode = 9;//delete
+        //pwd
+        const char *password = [self.passwordTextField.text cStringUsingEncoding:NSUTF8StringEncoding];//NSASCIIStringEncoding
+        //target
+        unsigned char target[] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
+        
+        
+        _context = elianNew(NULL, 0, target, ELIAN_SEND_V1 | ELIAN_SEND_V4);
+        elianPut(_context, TYPE_ID_AM, (char *)&authmode, 1);//delete
+        elianPut(_context, TYPE_ID_SSID, (char *)ssid, strlen(ssid));
+        elianPut(_context, TYPE_ID_PWD, (char *)password, strlen(password));
+        
+        [self startSmartConnection];
+    }
+}
+
+- (void)startSmartConnection {
+    static int attemps = 0;
+    if (attemps++ < 3)
+    {
+        [_activityIndicator startAnimating];
+        elianStart(_context);
+        [self performSelector:@selector(stopSmartConnection) withObject:nil afterDelay:20];
+    }
+}
+
+- (void)stopSmartConnection {
+    elianStop(_context);
+    [_activityIndicator stopAnimating];
+    [self performSelector:@selector(startSmartConnection) withObject:nil afterDelay:10];
+}
+
+#pragma mark - Socket
+
+- (void)prepareSocket {
+    GCDAsyncUdpSocket *socket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
+    NSError *error = nil;
+    
+    if (![socket bindToPort:9988 error:&error])
+    {
+        NSLog(@"Error binding: %@", [error localizedDescription]);
+    }
+    if (![socket beginReceiving:&error])
+    {
+        NSLog(@"Error receiving: %@", [error localizedDescription]);
+    }
+    
+    if (![socket enableBroadcast:YES error:&error])
+    {
+        NSLog(@"Error enableBroadcast: %@", [error localizedDescription]);
+    }
+    
+    self.socket = socket;
+}
+
 #pragma mark - Text field delegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
     
     if (textField == self.ssidTextField) {
-        NSLog(@"SSID text field");
+        [self.passwordTextField becomeFirstResponder];
     } else {
-        NSLog(@"Password text field");
+        [textField resignFirstResponder];
+        [self initSmartConnection];
     }
     return YES;
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table view delegate
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self initSmartConnection];
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+#pragma mark - GCDAsyncUdpSocket
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didSendDataWithTag:(long)tag
+{
+    NSLog(@"did send");
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)udpSocketDidClose:(GCDAsyncUdpSocket *)sock withError:(NSError *)error
+{
+    NSLog(@"error %@", error);
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+#pragma mark 搜索设备
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data
+      fromAddress:(NSData *)address
+withFilterContext:(id)filterContext
+{
+    if (data) {
+        Byte receiveBuffer[1024];
+        [data getBytes:receiveBuffer length:1024];
+        
+        if(receiveBuffer[0]==1){
+            NSString *host = nil;
+            uint16_t port = 0;
+            [GCDAsyncUdpSocket getHost:&host port:&port fromAddress:address];
+            
+            int contactId = *(int*)(&receiveBuffer[16]);
+            int type = *(int*)(&receiveBuffer[20]);
+            int flag = *(int*)(&receiveBuffer[24]);
+            
+            NSLog(@"GOT DATA!!! %@ %d %d %d", host, contactId, type, flag);
+        }
+    }
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

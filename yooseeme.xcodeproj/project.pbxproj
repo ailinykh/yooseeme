@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA4176041D95267C00EC876F /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4176031D95267C00EC876F /* GCDAsyncUdpSocket.m */; };
+		EA4176081D9534DD00EC876F /* empty.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA4176071D9534DD00EC876F /* empty.mm */; };
 		EA4913E71D94741300BE7B9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4913E61D94741300BE7B9D /* main.m */; };
 		EA4913EA1D94741300BE7B9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4913E91D94741300BE7B9D /* AppDelegate.m */; };
 		EA4913F01D94741300BE7B9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4913EE1D94741300BE7B9D /* Main.storyboard */; };
@@ -16,6 +18,7 @@
 		EA49140B1D94741400BE7B9D /* yooseemeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA49140A1D94741400BE7B9D /* yooseemeUITests.m */; };
 		EA49141D1D9474C200BE7B9D /* DeviceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA49141C1D9474C200BE7B9D /* DeviceListViewController.m */; };
 		EA4914201D94764600BE7B9D /* AddDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA49141F1D94764600BE7B9D /* AddDeviceViewController.m */; };
+		EA7E86301D951C00001C3CED /* libelian.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7E86181D950CEE001C3CED /* libelian.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA4176021D95267C00EC876F /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		EA4176031D95267C00EC876F /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		EA4176071D9534DD00EC876F /* empty.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = empty.mm; sourceTree = "<group>"; };
 		EA4913E21D94741300BE7B9D /* yooseeme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yooseeme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4913E61D94741300BE7B9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EA4913E81D94741300BE7B9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,6 +60,8 @@
 		EA49141C1D9474C200BE7B9D /* DeviceListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceListViewController.m; sourceTree = "<group>"; };
 		EA49141E1D94764600BE7B9D /* AddDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDeviceViewController.h; sourceTree = "<group>"; };
 		EA49141F1D94764600BE7B9D /* AddDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDeviceViewController.m; sourceTree = "<group>"; };
+		EA7E86171D950CE7001C3CED /* elian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = elian.h; sourceTree = "<group>"; };
+		EA7E86181D950CEE001C3CED /* libelian.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libelian.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA7E86301D951C00001C3CED /* libelian.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,9 +90,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA4176011D95266C00EC876F /* GCDAsyncUdpSocket */ = {
+			isa = PBXGroup;
+			children = (
+				EA4176021D95267C00EC876F /* GCDAsyncUdpSocket.h */,
+				EA4176031D95267C00EC876F /* GCDAsyncUdpSocket.m */,
+			);
+			name = GCDAsyncUdpSocket;
+			sourceTree = "<group>";
+		};
 		EA4913D91D94741300BE7B9D = {
 			isa = PBXGroup;
 			children = (
+				EA7E86131D950C6B001C3CED /* yoosee */,
 				EA4913E41D94741300BE7B9D /* yooseeme */,
 				EA4913FE1D94741400BE7B9D /* yooseemeTests */,
 				EA4914091D94741400BE7B9D /* yooseemeUITests */,
@@ -143,6 +162,25 @@
 				EA49140C1D94741400BE7B9D /* Info.plist */,
 			);
 			path = yooseemeUITests;
+			sourceTree = "<group>";
+		};
+		EA7E86131D950C6B001C3CED /* yoosee */ = {
+			isa = PBXGroup;
+			children = (
+				EA4176011D95266C00EC876F /* GCDAsyncUdpSocket */,
+				EA7E86161D950CD6001C3CED /* wifi */,
+			);
+			name = yoosee;
+			sourceTree = "<group>";
+		};
+		EA7E86161D950CD6001C3CED /* wifi */ = {
+			isa = PBXGroup;
+			children = (
+				EA7E86171D950CE7001C3CED /* elian.h */,
+				EA7E86181D950CEE001C3CED /* libelian.a */,
+				EA4176071D9534DD00EC876F /* empty.mm */,
+			);
+			name = wifi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +314,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA49141D1D9474C200BE7B9D /* DeviceListViewController.m in Sources */,
+				EA4176081D9534DD00EC876F /* empty.mm in Sources */,
 				EA4914201D94764600BE7B9D /* AddDeviceViewController.m in Sources */,
 				EA4913EA1D94741300BE7B9D /* AppDelegate.m in Sources */,
+				EA4176041D95267C00EC876F /* GCDAsyncUdpSocket.m in Sources */,
 				EA4913E71D94741300BE7B9D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,7 +379,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -383,7 +423,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -418,10 +458,16 @@
 		EA4914101D94741400BE7B9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = yooseeme/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ailinykh.yooseeme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -430,10 +476,16 @@
 		EA4914111D94741400BE7B9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = yooseeme/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ailinykh.yooseeme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -504,6 +556,7 @@
 				EA4914111D94741400BE7B9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA4914121D94741400BE7B9D /* Build configuration list for PBXNativeTarget "yooseemeTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +565,7 @@
 				EA4914141D94741400BE7B9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA4914151D94741400BE7B9D /* Build configuration list for PBXNativeTarget "yooseemeUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +574,7 @@
 				EA4914171D94741400BE7B9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
