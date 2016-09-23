@@ -20,6 +20,31 @@
 		EA4914201D94764600BE7B9D /* AddDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA49141F1D94764600BE7B9D /* AddDeviceViewController.m */; };
 		EA7E86301D951C00001C3CED /* libelian.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7E86181D950CEE001C3CED /* libelian.a */; };
 		EABC8CA81D95682100F1F13D /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CA71D95682100F1F13D /* PasswordViewController.m */; };
+		EABC8CAD1D957C8500F1F13D /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CAC1D957C8500F1F13D /* Contact.m */; };
+		EABC8CB21D957D3000F1F13D /* P2PClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CB11D957D3000F1F13D /* P2PClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EABC8CB61D957D9C00F1F13D /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CB51D957D9C00F1F13D /* Utils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EABC8CBA1D957DD600F1F13D /* PAIOUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CB91D957DD600F1F13D /* PAIOUnit.m */; };
+		EABC8CBD1D957E3800F1F13D /* FListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CBC1D957E3800F1F13D /* FListManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EABC8CC01D957E7B00F1F13D /* des2.c in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CBE1D957E7B00F1F13D /* des2.c */; };
+		EABC8CC41D9581A700F1F13D /* ShakeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CC31D9581A700F1F13D /* ShakeManager.m */; };
+		EABC8CC71D95823000F1F13D /* ContactDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CC61D95823000F1F13D /* ContactDAO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EABC8CCA1D95828F00F1F13D /* UDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CC91D95828F00F1F13D /* UDManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EABC8CCD1D9582B400F1F13D /* LocalDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CCC1D9582B400F1F13D /* LocalDevice.m */; };
+		EABC8CD11D95835200F1F13D /* LoginResult.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CD01D95835200F1F13D /* LoginResult.m */; };
+		EABC8CDB1D95839A00F1F13D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CD41D95839A00F1F13D /* FMDatabase.m */; };
+		EABC8CDC1D95839A00F1F13D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CD61D95839A00F1F13D /* FMDatabasePool.m */; };
+		EABC8CDD1D95839A00F1F13D /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CD81D95839A00F1F13D /* FMDatabaseQueue.m */; };
+		EABC8CDE1D95839A00F1F13D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CDA1D95839A00F1F13D /* FMResultSet.m */; };
+		EABC8CE31D958D0700F1F13D /* RtspInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CE21D958D0700F1F13D /* RtspInterface.mm */; };
+		EABC8CE61D958D3C00F1F13D /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CE51D958D3C00F1F13D /* Alarm.m */; };
+		EABC8CE91D958D5800F1F13D /* AlarmDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CE81D958D5800F1F13D /* AlarmDAO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EABC8CEC1D958D8C00F1F13D /* RecommendInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CEB1D958D8C00F1F13D /* RecommendInfo.m */; };
+		EABC8CEF1D958DA800F1F13D /* RecommendInfoDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CEE1D958DA800F1F13D /* RecommendInfoDAO.m */; };
+		EABC8CF41D958E7800F1F13D /* MPNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CF31D958E7800F1F13D /* MPNotificationView.m */; };
+		EABC8CF81D958EB100F1F13D /* OBGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CF71D958EB100F1F13D /* OBGradientView.m */; };
+		EABC8CFB1D958F0800F1F13D /* CameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CFA1D958F0800F1F13D /* CameraManager.m */; };
+		EABC8CFE1D958F2000F1F13D /* UDPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CFD1D958F2000F1F13D /* UDPManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EABC8D021D958F7100F1F13D /* FfmpegInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8D011D958F7100F1F13D /* FfmpegInterface.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +90,62 @@
 		EA7E86181D950CEE001C3CED /* libelian.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libelian.a; sourceTree = "<group>"; };
 		EABC8CA61D95682100F1F13D /* PasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
 		EABC8CA71D95682100F1F13D /* PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
+		EABC8CAA1D957C8500F1F13D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		EABC8CAB1D957C8500F1F13D /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		EABC8CAC1D957C8500F1F13D /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		EABC8CAF1D957D3000F1F13D /* P2PCInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P2PCInterface.h; sourceTree = "<group>"; };
+		EABC8CB01D957D3000F1F13D /* P2PClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P2PClient.h; sourceTree = "<group>"; };
+		EABC8CB11D957D3000F1F13D /* P2PClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P2PClient.m; sourceTree = "<group>"; };
+		EABC8CB41D957D9C00F1F13D /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		EABC8CB51D957D9C00F1F13D /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		EABC8CB71D957DBB00F1F13D /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		EABC8CB81D957DD600F1F13D /* PAIOUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAIOUnit.h; sourceTree = "<group>"; };
+		EABC8CB91D957DD600F1F13D /* PAIOUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAIOUnit.m; sourceTree = "<group>"; };
+		EABC8CBB1D957E3800F1F13D /* FListManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FListManager.h; sourceTree = "<group>"; };
+		EABC8CBC1D957E3800F1F13D /* FListManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FListManager.m; sourceTree = "<group>"; };
+		EABC8CBE1D957E7B00F1F13D /* des2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = des2.c; sourceTree = "<group>"; };
+		EABC8CBF1D957E7B00F1F13D /* des2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = des2.h; sourceTree = "<group>"; };
+		EABC8CC11D957E8F00F1F13D /* mesg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mesg.h; sourceTree = "<group>"; };
+		EABC8CC21D9581A700F1F13D /* ShakeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeManager.h; sourceTree = "<group>"; };
+		EABC8CC31D9581A700F1F13D /* ShakeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeManager.m; sourceTree = "<group>"; };
+		EABC8CC51D95823000F1F13D /* ContactDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDAO.h; sourceTree = "<group>"; };
+		EABC8CC61D95823000F1F13D /* ContactDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDAO.m; sourceTree = "<group>"; };
+		EABC8CC81D95828F00F1F13D /* UDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDManager.h; sourceTree = "<group>"; };
+		EABC8CC91D95828F00F1F13D /* UDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDManager.m; sourceTree = "<group>"; };
+		EABC8CCB1D9582B400F1F13D /* LocalDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDevice.h; sourceTree = "<group>"; };
+		EABC8CCC1D9582B400F1F13D /* LocalDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDevice.m; sourceTree = "<group>"; };
+		EABC8CCF1D95835200F1F13D /* LoginResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginResult.h; sourceTree = "<group>"; };
+		EABC8CD01D95835200F1F13D /* LoginResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginResult.m; sourceTree = "<group>"; };
+		EABC8CD31D95839A00F1F13D /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		EABC8CD41D95839A00F1F13D /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		EABC8CD51D95839A00F1F13D /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		EABC8CD61D95839A00F1F13D /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		EABC8CD71D95839A00F1F13D /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		EABC8CD81D95839A00F1F13D /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		EABC8CD91D95839A00F1F13D /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		EABC8CDA1D95839A00F1F13D /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		EABC8CE01D958D0700F1F13D /* Rtsp_instance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rtsp_instance.h; sourceTree = "<group>"; };
+		EABC8CE11D958D0700F1F13D /* RtspInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtspInterface.h; sourceTree = "<group>"; };
+		EABC8CE21D958D0700F1F13D /* RtspInterface.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RtspInterface.mm; sourceTree = "<group>"; };
+		EABC8CE41D958D3C00F1F13D /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
+		EABC8CE51D958D3C00F1F13D /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		EABC8CE71D958D5800F1F13D /* AlarmDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmDAO.h; sourceTree = "<group>"; };
+		EABC8CE81D958D5800F1F13D /* AlarmDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmDAO.m; sourceTree = "<group>"; };
+		EABC8CEA1D958D8C00F1F13D /* RecommendInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendInfo.h; sourceTree = "<group>"; };
+		EABC8CEB1D958D8C00F1F13D /* RecommendInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendInfo.m; sourceTree = "<group>"; };
+		EABC8CED1D958DA800F1F13D /* RecommendInfoDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendInfoDAO.h; sourceTree = "<group>"; };
+		EABC8CEE1D958DA800F1F13D /* RecommendInfoDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendInfoDAO.m; sourceTree = "<group>"; };
+		EABC8CF21D958E7800F1F13D /* MPNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPNotificationView.h; sourceTree = "<group>"; };
+		EABC8CF31D958E7800F1F13D /* MPNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPNotificationView.m; sourceTree = "<group>"; };
+		EABC8CF61D958EB100F1F13D /* OBGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBGradientView.h; sourceTree = "<group>"; };
+		EABC8CF71D958EB100F1F13D /* OBGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBGradientView.m; sourceTree = "<group>"; };
+		EABC8CF91D958F0800F1F13D /* CameraManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraManager.h; sourceTree = "<group>"; };
+		EABC8CFA1D958F0800F1F13D /* CameraManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraManager.m; sourceTree = "<group>"; };
+		EABC8CFC1D958F2000F1F13D /* UDPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPManager.h; sourceTree = "<group>"; };
+		EABC8CFD1D958F2000F1F13D /* UDPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPManager.m; sourceTree = "<group>"; };
+		EABC8CFF1D958F5F00F1F13D /* avcodec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
+		EABC8D001D958F7100F1F13D /* FfmpegInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FfmpegInterface.h; sourceTree = "<group>"; };
+		EABC8D011D958F7100F1F13D /* FfmpegInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FfmpegInterface.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +253,12 @@
 		EA7E86131D950C6B001C3CED /* yoosee */ = {
 			isa = PBXGroup;
 			children = (
+				EABC8CF01D958E5F00F1F13D /* Libraries */,
+				EABC8CDF1D958C5800F1F13D /* rtsp */,
+				EABC8CCE1D95833C00F1F13D /* Net */,
+				EABC8CB31D957D8400F1F13D /* Global */,
+				EABC8CAE1D957CF300F1F13D /* P2PCore */,
+				EABC8CA91D957C6800F1F13D /* Databases */,
 				EA4176011D95266C00EC876F /* GCDAsyncUdpSocket */,
 				EA7E86161D950CD6001C3CED /* wifi */,
 			);
@@ -186,6 +273,128 @@
 				EA4176071D9534DD00EC876F /* empty.mm */,
 			);
 			name = wifi;
+			sourceTree = "<group>";
+		};
+		EABC8CA91D957C6800F1F13D /* Databases */ = {
+			isa = PBXGroup;
+			children = (
+				EABC8CD21D95837400F1F13D /* FMDatabase */,
+				EABC8CE41D958D3C00F1F13D /* Alarm.h */,
+				EABC8CE51D958D3C00F1F13D /* Alarm.m */,
+				EABC8CE71D958D5800F1F13D /* AlarmDAO.h */,
+				EABC8CE81D958D5800F1F13D /* AlarmDAO.m */,
+				EABC8CAA1D957C8500F1F13D /* Constants.h */,
+				EABC8CAB1D957C8500F1F13D /* Contact.h */,
+				EABC8CAC1D957C8500F1F13D /* Contact.m */,
+				EABC8CC51D95823000F1F13D /* ContactDAO.h */,
+				EABC8CC61D95823000F1F13D /* ContactDAO.m */,
+				EABC8CC81D95828F00F1F13D /* UDManager.h */,
+				EABC8CC91D95828F00F1F13D /* UDManager.m */,
+				EABC8CFC1D958F2000F1F13D /* UDPManager.h */,
+				EABC8CFD1D958F2000F1F13D /* UDPManager.m */,
+				EABC8CCB1D9582B400F1F13D /* LocalDevice.h */,
+				EABC8CCC1D9582B400F1F13D /* LocalDevice.m */,
+				EABC8CEA1D958D8C00F1F13D /* RecommendInfo.h */,
+				EABC8CEB1D958D8C00F1F13D /* RecommendInfo.m */,
+				EABC8CED1D958DA800F1F13D /* RecommendInfoDAO.h */,
+				EABC8CEE1D958DA800F1F13D /* RecommendInfoDAO.m */,
+			);
+			name = Databases;
+			sourceTree = "<group>";
+		};
+		EABC8CAE1D957CF300F1F13D /* P2PCore */ = {
+			isa = PBXGroup;
+			children = (
+				EABC8CAF1D957D3000F1F13D /* P2PCInterface.h */,
+				EABC8CB01D957D3000F1F13D /* P2PClient.h */,
+				EABC8CB11D957D3000F1F13D /* P2PClient.m */,
+				EABC8CB71D957DBB00F1F13D /* config.h */,
+				EABC8CB81D957DD600F1F13D /* PAIOUnit.h */,
+				EABC8CB91D957DD600F1F13D /* PAIOUnit.m */,
+				EABC8CF91D958F0800F1F13D /* CameraManager.h */,
+				EABC8CFA1D958F0800F1F13D /* CameraManager.m */,
+				EABC8CBE1D957E7B00F1F13D /* des2.c */,
+				EABC8CBF1D957E7B00F1F13D /* des2.h */,
+				EABC8CC11D957E8F00F1F13D /* mesg.h */,
+			);
+			name = P2PCore;
+			sourceTree = "<group>";
+		};
+		EABC8CB31D957D8400F1F13D /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				EABC8CB41D957D9C00F1F13D /* Utils.h */,
+				EABC8CB51D957D9C00F1F13D /* Utils.m */,
+				EABC8CBB1D957E3800F1F13D /* FListManager.h */,
+				EABC8CBC1D957E3800F1F13D /* FListManager.m */,
+				EABC8CC21D9581A700F1F13D /* ShakeManager.h */,
+				EABC8CC31D9581A700F1F13D /* ShakeManager.m */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		EABC8CCE1D95833C00F1F13D /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				EABC8CCF1D95835200F1F13D /* LoginResult.h */,
+				EABC8CD01D95835200F1F13D /* LoginResult.m */,
+			);
+			name = Net;
+			sourceTree = "<group>";
+		};
+		EABC8CD21D95837400F1F13D /* FMDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				EABC8CD31D95839A00F1F13D /* FMDatabase.h */,
+				EABC8CD41D95839A00F1F13D /* FMDatabase.m */,
+				EABC8CD51D95839A00F1F13D /* FMDatabasePool.h */,
+				EABC8CD61D95839A00F1F13D /* FMDatabasePool.m */,
+				EABC8CD71D95839A00F1F13D /* FMDatabaseQueue.h */,
+				EABC8CD81D95839A00F1F13D /* FMDatabaseQueue.m */,
+				EABC8CD91D95839A00F1F13D /* FMResultSet.h */,
+				EABC8CDA1D95839A00F1F13D /* FMResultSet.m */,
+			);
+			name = FMDatabase;
+			sourceTree = "<group>";
+		};
+		EABC8CDF1D958C5800F1F13D /* rtsp */ = {
+			isa = PBXGroup;
+			children = (
+				EABC8CFF1D958F5F00F1F13D /* avcodec.h */,
+				EABC8CE01D958D0700F1F13D /* Rtsp_instance.h */,
+				EABC8CE11D958D0700F1F13D /* RtspInterface.h */,
+				EABC8CE21D958D0700F1F13D /* RtspInterface.mm */,
+				EABC8D001D958F7100F1F13D /* FfmpegInterface.h */,
+				EABC8D011D958F7100F1F13D /* FfmpegInterface.m */,
+			);
+			name = rtsp;
+			sourceTree = "<group>";
+		};
+		EABC8CF01D958E5F00F1F13D /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				EABC8CF51D958E9E00F1F13D /* OBGradientView */,
+				EABC8CF11D958E6E00F1F13D /* MPNotificationView */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		EABC8CF11D958E6E00F1F13D /* MPNotificationView */ = {
+			isa = PBXGroup;
+			children = (
+				EABC8CF21D958E7800F1F13D /* MPNotificationView.h */,
+				EABC8CF31D958E7800F1F13D /* MPNotificationView.m */,
+			);
+			name = MPNotificationView;
+			sourceTree = "<group>";
+		};
+		EABC8CF51D958E9E00F1F13D /* OBGradientView */ = {
+			isa = PBXGroup;
+			children = (
+				EABC8CF61D958EB100F1F13D /* OBGradientView.h */,
+				EABC8CF71D958EB100F1F13D /* OBGradientView.m */,
+			);
+			name = OBGradientView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,12 +527,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EABC8CEC1D958D8C00F1F13D /* RecommendInfo.m in Sources */,
+				EABC8CC71D95823000F1F13D /* ContactDAO.m in Sources */,
+				EABC8CDB1D95839A00F1F13D /* FMDatabase.m in Sources */,
+				EABC8CF81D958EB100F1F13D /* OBGradientView.m in Sources */,
+				EABC8CFB1D958F0800F1F13D /* CameraManager.m in Sources */,
+				EABC8CC01D957E7B00F1F13D /* des2.c in Sources */,
+				EABC8CAD1D957C8500F1F13D /* Contact.m in Sources */,
+				EABC8CFE1D958F2000F1F13D /* UDPManager.m in Sources */,
+				EABC8CE31D958D0700F1F13D /* RtspInterface.mm in Sources */,
+				EABC8CC41D9581A700F1F13D /* ShakeManager.m in Sources */,
+				EABC8CD11D95835200F1F13D /* LoginResult.m in Sources */,
 				EA49141D1D9474C200BE7B9D /* DeviceListViewController.m in Sources */,
+				EABC8CBD1D957E3800F1F13D /* FListManager.m in Sources */,
+				EABC8CDE1D95839A00F1F13D /* FMResultSet.m in Sources */,
 				EA4176081D9534DD00EC876F /* empty.mm in Sources */,
+				EABC8CCD1D9582B400F1F13D /* LocalDevice.m in Sources */,
+				EABC8CB61D957D9C00F1F13D /* Utils.m in Sources */,
 				EA4914201D94764600BE7B9D /* AddDeviceViewController.m in Sources */,
+				EABC8D021D958F7100F1F13D /* FfmpegInterface.m in Sources */,
 				EABC8CA81D95682100F1F13D /* PasswordViewController.m in Sources */,
+				EABC8CE61D958D3C00F1F13D /* Alarm.m in Sources */,
+				EABC8CCA1D95828F00F1F13D /* UDManager.m in Sources */,
 				EA4913EA1D94741300BE7B9D /* AppDelegate.m in Sources */,
+				EABC8CBA1D957DD600F1F13D /* PAIOUnit.m in Sources */,
+				EABC8CB21D957D3000F1F13D /* P2PClient.m in Sources */,
+				EABC8CDD1D95839A00F1F13D /* FMDatabaseQueue.m in Sources */,
+				EABC8CF41D958E7800F1F13D /* MPNotificationView.m in Sources */,
+				EABC8CDC1D95839A00F1F13D /* FMDatabasePool.m in Sources */,
 				EA4176041D95267C00EC876F /* GCDAsyncUdpSocket.m in Sources */,
+				EABC8CE91D958D5800F1F13D /* AlarmDAO.m in Sources */,
+				EABC8CEF1D958DA800F1F13D /* RecommendInfoDAO.m in Sources */,
 				EA4913E71D94741300BE7B9D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
