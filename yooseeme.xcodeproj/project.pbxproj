@@ -19,6 +19,7 @@
 		EA49141D1D9474C200BE7B9D /* DeviceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA49141C1D9474C200BE7B9D /* DeviceListViewController.m */; };
 		EA4914201D94764600BE7B9D /* AddDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA49141F1D94764600BE7B9D /* AddDeviceViewController.m */; };
 		EA7E86301D951C00001C3CED /* libelian.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7E86181D950CEE001C3CED /* libelian.a */; };
+		EABC8CA81D95682100F1F13D /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CA71D95682100F1F13D /* PasswordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		EA49141F1D94764600BE7B9D /* AddDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDeviceViewController.m; sourceTree = "<group>"; };
 		EA7E86171D950CE7001C3CED /* elian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = elian.h; sourceTree = "<group>"; };
 		EA7E86181D950CEE001C3CED /* libelian.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libelian.a; sourceTree = "<group>"; };
+		EABC8CA61D95682100F1F13D /* PasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
+		EABC8CA71D95682100F1F13D /* PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				EA49141C1D9474C200BE7B9D /* DeviceListViewController.m */,
 				EA49141E1D94764600BE7B9D /* AddDeviceViewController.h */,
 				EA49141F1D94764600BE7B9D /* AddDeviceViewController.m */,
+				EABC8CA61D95682100F1F13D /* PasswordViewController.h */,
+				EABC8CA71D95682100F1F13D /* PasswordViewController.m */,
 				EA4913EE1D94741300BE7B9D /* Main.storyboard */,
 				EA4913F11D94741400BE7B9D /* Assets.xcassets */,
 				EA4913F31D94741400BE7B9D /* LaunchScreen.storyboard */,
@@ -316,6 +321,7 @@
 				EA49141D1D9474C200BE7B9D /* DeviceListViewController.m in Sources */,
 				EA4176081D9534DD00EC876F /* empty.mm in Sources */,
 				EA4914201D94764600BE7B9D /* AddDeviceViewController.m in Sources */,
+				EABC8CA81D95682100F1F13D /* PasswordViewController.m in Sources */,
 				EA4913EA1D94741300BE7B9D /* AppDelegate.m in Sources */,
 				EA4176041D95267C00EC876F /* GCDAsyncUdpSocket.m in Sources */,
 				EA4913E71D94741300BE7B9D /* main.m in Sources */,

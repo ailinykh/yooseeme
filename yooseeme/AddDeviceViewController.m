@@ -10,9 +10,12 @@
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import "elian.h"
 #import "GCDAsyncUdpSocket.h"
+#import "PasswordViewController.h"
 
 @interface AddDeviceViewController () <UITextFieldDelegate> {
     void *_context;
+    int _attempts;
+    NSString *_deviceId;
 }
 @property (nonatomic, weak) IBOutlet UITextField *ssidTextField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
@@ -22,6 +25,7 @@
 @end
 
 @implementation AddDeviceViewController
+static NSString *kWiFiPasswordString = @"kWiFiPasswordString";
 
 - (void)dealloc {
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
@@ -31,6 +35,16 @@
     [super viewDidLoad];
     [self scanWiFiNetwork];
     [self prepareSocket];
+    
+    _passwordTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:kWiFiPasswordString];
+    _attempts = 0;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if (self.socket) {
+        [self.socket close];
+    }
 }
 
 - (void)scanWiFiNetwork {
@@ -86,8 +100,7 @@
 }
 
 - (void)startSmartConnection {
-    static int attemps = 0;
-    if (attemps++ < 3)
+    if (_attempts++ < 3)
     {
         [_activityIndicator startAnimating];
         elianStart(_context);
@@ -132,7 +145,7 @@
         [self.passwordTextField becomeFirstResponder];
     } else {
         [textField resignFirstResponder];
-        [self initSmartConnection];
+        [[NSUserDefaults standardUserDefaults] setObject:textField.text forKey:kWiFiPasswordString];
     }
     return YES;
 }
@@ -140,7 +153,10 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self initSmartConnection];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1) {
+        [self initSmartConnection];
+    }
 }
 
 #pragma mark - GCDAsyncUdpSocket
@@ -159,7 +175,7 @@
       fromAddress:(NSData *)address
 withFilterContext:(id)filterContext
 {
-    if (data) {
+    if (data && !_deviceId) {
         Byte receiveBuffer[1024];
         [data getBytes:receiveBuffer length:1024];
         
@@ -172,8 +188,21 @@ withFilterContext:(id)filterContext
             int type = *(int*)(&receiveBuffer[20]);
             int flag = *(int*)(&receiveBuffer[24]);
             
-            NSLog(@"GOT DATA!!! %@ %d %d %d", host, contactId, type, flag);
+            NSLog(@"CONTACT_ID:%d", contactId);
+            _deviceId = [NSString stringWithFormat:@"%d", contactId];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self performSegueWithIdentifier:@"PasswordSegueIdentifier" sender:nil];
+            });
         }
+    }
+}
+
+#pragma mark - segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"PasswordSegueIdentifier"]) {
+        [(PasswordViewController*)segue.destinationViewController setDeviceId:_deviceId];
     }
 }
 
