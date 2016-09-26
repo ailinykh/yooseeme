@@ -13,6 +13,18 @@
 		EA3FDD301D9932D2005031F8 /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3FDD2F1D9932D2005031F8 /* libbz2.1.0.tbd */; };
 		EA3FDD321D99331F005031F8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3FDD311D99331F005031F8 /* libz.tbd */; };
 		EA3FDD341D993341005031F8 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3FDD331D993340005031F8 /* libiconv.tbd */; };
+		EA3FDD3E1D99559A005031F8 /* libAVCtrl_arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3FDD3B1D99559A005031F8 /* libAVCtrl_arm64.a */; };
+		EA3FDD3F1D99559A005031F8 /* libAVCtrl_armv7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3FDD3C1D99559A005031F8 /* libAVCtrl_armv7.a */; };
+		EA3FDD401D99559A005031F8 /* libAVCtrl_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3FDD3D1D99559A005031F8 /* libAVCtrl_armv7s.a */; };
+		EA3FDD451D996D20005031F8 /* NetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3FDD441D996D20005031F8 /* NetManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA3FDD481D996D53005031F8 /* AccountResult.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3FDD471D996D53005031F8 /* AccountResult.m */; };
+		EA3FDD4B1D996D78005031F8 /* ModifyLoginPasswordResult.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3FDD4A1D996D78005031F8 /* ModifyLoginPasswordResult.m */; };
+		EA3FDD4E1D996D8A005031F8 /* RegisterResult.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3FDD4D1D996D8A005031F8 /* RegisterResult.m */; };
+		EA3FDD511D996DA2005031F8 /* CheckNewMessageResult.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3FDD501D996DA2005031F8 /* CheckNewMessageResult.m */; };
+		EA3FDD541D996DB2005031F8 /* GetContactMessageResult.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3FDD531D996DB2005031F8 /* GetContactMessageResult.m */; };
+		EA3FDD571D996DD8005031F8 /* CheckAlarmMessageResult.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3FDD561D996DD8005031F8 /* CheckAlarmMessageResult.m */; };
+		EA3FDD5A1D996E13005031F8 /* GetAlarmRecordResult.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3FDD591D996E13005031F8 /* GetAlarmRecordResult.m */; };
+		EA3FDD5D1D996E4D005031F8 /* libPwdEncrypt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3FDD5C1D996E4D005031F8 /* libPwdEncrypt.a */; };
 		EA4176041D95267C00EC876F /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4176031D95267C00EC876F /* GCDAsyncUdpSocket.m */; };
 		EA4176081D9534DD00EC876F /* empty.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA4176071D9534DD00EC876F /* empty.mm */; };
 		EA4913E71D94741300BE7B9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4913E61D94741300BE7B9D /* main.m */; };
@@ -78,6 +90,31 @@
 		EA3FDD2F1D9932D2005031F8 /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
 		EA3FDD311D99331F005031F8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		EA3FDD331D993340005031F8 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		EA3FDD351D995578005031F8 /* libAVCtrl_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAVCtrl_arm64.a; path = ../../Downloads/Yoosee/libAVCtrl_arm64.a; sourceTree = "<group>"; };
+		EA3FDD361D995578005031F8 /* libAVCtrl_armv7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAVCtrl_armv7.a; path = ../../Downloads/Yoosee/libAVCtrl_armv7.a; sourceTree = "<group>"; };
+		EA3FDD371D995578005031F8 /* libAVCtrl_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAVCtrl_armv7s.a; path = ../../Downloads/Yoosee/libAVCtrl_armv7s.a; sourceTree = "<group>"; };
+		EA3FDD3B1D99559A005031F8 /* libAVCtrl_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAVCtrl_arm64.a; sourceTree = "<group>"; };
+		EA3FDD3C1D99559A005031F8 /* libAVCtrl_armv7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAVCtrl_armv7.a; sourceTree = "<group>"; };
+		EA3FDD3D1D99559A005031F8 /* libAVCtrl_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAVCtrl_armv7s.a; sourceTree = "<group>"; };
+		EA3FDD411D996C8C005031F8 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		EA3FDD431D996D20005031F8 /* NetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetManager.h; sourceTree = "<group>"; };
+		EA3FDD441D996D20005031F8 /* NetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetManager.m; sourceTree = "<group>"; };
+		EA3FDD461D996D53005031F8 /* AccountResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountResult.h; sourceTree = "<group>"; };
+		EA3FDD471D996D53005031F8 /* AccountResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountResult.m; sourceTree = "<group>"; };
+		EA3FDD491D996D78005031F8 /* ModifyLoginPasswordResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyLoginPasswordResult.h; sourceTree = "<group>"; };
+		EA3FDD4A1D996D78005031F8 /* ModifyLoginPasswordResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyLoginPasswordResult.m; sourceTree = "<group>"; };
+		EA3FDD4C1D996D8A005031F8 /* RegisterResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterResult.h; sourceTree = "<group>"; };
+		EA3FDD4D1D996D8A005031F8 /* RegisterResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterResult.m; sourceTree = "<group>"; };
+		EA3FDD4F1D996DA2005031F8 /* CheckNewMessageResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckNewMessageResult.h; sourceTree = "<group>"; };
+		EA3FDD501D996DA2005031F8 /* CheckNewMessageResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckNewMessageResult.m; sourceTree = "<group>"; };
+		EA3FDD521D996DB2005031F8 /* GetContactMessageResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetContactMessageResult.h; sourceTree = "<group>"; };
+		EA3FDD531D996DB2005031F8 /* GetContactMessageResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetContactMessageResult.m; sourceTree = "<group>"; };
+		EA3FDD551D996DD8005031F8 /* CheckAlarmMessageResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckAlarmMessageResult.h; sourceTree = "<group>"; };
+		EA3FDD561D996DD8005031F8 /* CheckAlarmMessageResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckAlarmMessageResult.m; sourceTree = "<group>"; };
+		EA3FDD581D996E13005031F8 /* GetAlarmRecordResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAlarmRecordResult.h; sourceTree = "<group>"; };
+		EA3FDD591D996E13005031F8 /* GetAlarmRecordResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAlarmRecordResult.m; sourceTree = "<group>"; };
+		EA3FDD5C1D996E4D005031F8 /* libPwdEncrypt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPwdEncrypt.a; sourceTree = "<group>"; };
+		EA3FDD5E1D996E51005031F8 /* libPwdEncrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libPwdEncrypt.h; sourceTree = "<group>"; };
 		EA4176021D95267C00EC876F /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		EA4176031D95267C00EC876F /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		EA4176071D9534DD00EC876F /* empty.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = empty.mm; sourceTree = "<group>"; };
@@ -166,11 +203,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA3FDD341D993341005031F8 /* libiconv.tbd in Frameworks */,
+				EA3FDD401D99559A005031F8 /* libAVCtrl_armv7s.a in Frameworks */,
 				EA3FDD321D99331F005031F8 /* libz.tbd in Frameworks */,
 				EA3FDD301D9932D2005031F8 /* libbz2.1.0.tbd in Frameworks */,
 				EA3FDD2E1D9931F7005031F8 /* libsqlite3.0.tbd in Frameworks */,
+				EA3FDD3E1D99559A005031F8 /* libAVCtrl_arm64.a in Frameworks */,
 				EA3FDD281D9930DB005031F8 /* libRTSP.a in Frameworks */,
 				EA3FDD2B1D993170005031F8 /* libAVCtrl_i386.a in Frameworks */,
+				EA3FDD3F1D99559A005031F8 /* libAVCtrl_armv7.a in Frameworks */,
+				EA3FDD5D1D996E4D005031F8 /* libPwdEncrypt.a in Frameworks */,
 				EA7E86301D951C00001C3CED /* libelian.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,24 +233,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EA3FDD291D993144005031F8 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EA3FDD271D9930DB005031F8 /* libRTSP.a */,
-				EA3FDD2A1D993170005031F8 /* libAVCtrl_i386.a */,
-			);
-			name = frameworks;
-			sourceTree = "<group>";
-		};
 		EA3FDD2C1D9931F7005031F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA3FDD411D996C8C005031F8 /* AFNetworking.framework */,
+				EA3FDD271D9930DB005031F8 /* libRTSP.a */,
+				EA3FDD2A1D993170005031F8 /* libAVCtrl_i386.a */,
+				EA3FDD3B1D99559A005031F8 /* libAVCtrl_arm64.a */,
+				EA3FDD3C1D99559A005031F8 /* libAVCtrl_armv7.a */,
+				EA3FDD3D1D99559A005031F8 /* libAVCtrl_armv7s.a */,
+				EA3FDD351D995578005031F8 /* libAVCtrl_arm64.a */,
+				EA3FDD361D995578005031F8 /* libAVCtrl_armv7.a */,
+				EA3FDD371D995578005031F8 /* libAVCtrl_armv7s.a */,
 				EA3FDD331D993340005031F8 /* libiconv.tbd */,
 				EA3FDD311D99331F005031F8 /* libz.tbd */,
 				EA3FDD2F1D9932D2005031F8 /* libbz2.1.0.tbd */,
 				EA3FDD2D1D9931F7005031F8 /* libsqlite3.0.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA3FDD5B1D996E3C005031F8 /* libPwdEncrypt */ = {
+			isa = PBXGroup;
+			children = (
+				EA3FDD5C1D996E4D005031F8 /* libPwdEncrypt.a */,
+				EA3FDD5E1D996E51005031F8 /* libPwdEncrypt.h */,
+			);
+			name = libPwdEncrypt;
 			sourceTree = "<group>";
 		};
 		EA4176011D95266C00EC876F /* GCDAsyncUdpSocket */ = {
@@ -224,7 +274,6 @@
 		EA4913D91D94741300BE7B9D = {
 			isa = PBXGroup;
 			children = (
-				EA3FDD291D993144005031F8 /* frameworks */,
 				EA4913E31D94741300BE7B9D /* Products */,
 				EA7E86131D950C6B001C3CED /* yoosee */,
 				EA4913E41D94741300BE7B9D /* yooseeme */,
@@ -376,8 +425,24 @@
 		EABC8CCE1D95833C00F1F13D /* Net */ = {
 			isa = PBXGroup;
 			children = (
+				EA3FDD431D996D20005031F8 /* NetManager.h */,
+				EA3FDD441D996D20005031F8 /* NetManager.m */,
 				EABC8CCF1D95835200F1F13D /* LoginResult.h */,
 				EABC8CD01D95835200F1F13D /* LoginResult.m */,
+				EA3FDD461D996D53005031F8 /* AccountResult.h */,
+				EA3FDD471D996D53005031F8 /* AccountResult.m */,
+				EA3FDD491D996D78005031F8 /* ModifyLoginPasswordResult.h */,
+				EA3FDD4A1D996D78005031F8 /* ModifyLoginPasswordResult.m */,
+				EA3FDD4C1D996D8A005031F8 /* RegisterResult.h */,
+				EA3FDD4D1D996D8A005031F8 /* RegisterResult.m */,
+				EA3FDD4F1D996DA2005031F8 /* CheckNewMessageResult.h */,
+				EA3FDD501D996DA2005031F8 /* CheckNewMessageResult.m */,
+				EA3FDD521D996DB2005031F8 /* GetContactMessageResult.h */,
+				EA3FDD531D996DB2005031F8 /* GetContactMessageResult.m */,
+				EA3FDD551D996DD8005031F8 /* CheckAlarmMessageResult.h */,
+				EA3FDD561D996DD8005031F8 /* CheckAlarmMessageResult.m */,
+				EA3FDD581D996E13005031F8 /* GetAlarmRecordResult.h */,
+				EA3FDD591D996E13005031F8 /* GetAlarmRecordResult.m */,
 			);
 			path = Net;
 			sourceTree = "<group>";
@@ -413,6 +478,7 @@
 		EABC8CF01D958E5F00F1F13D /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				EA3FDD5B1D996E3C005031F8 /* libPwdEncrypt */,
 				EABC8CF11D958E6E00F1F13D /* MPNotificationView */,
 				EABC8CF51D958E9E00F1F13D /* OBGradientView */,
 			);
@@ -504,6 +570,7 @@
 				TargetAttributes = {
 					EA4913E11D94741300BE7B9D = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 45CBN28GD4;
 					};
 					EA4913FA1D94741400BE7B9D = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -571,6 +638,7 @@
 				EABC8CC71D95823000F1F13D /* ContactDAO.m in Sources */,
 				EABC8CDB1D95839A00F1F13D /* FMDatabase.m in Sources */,
 				EABC8CF81D958EB100F1F13D /* OBGradientView.m in Sources */,
+				EA3FDD5A1D996E13005031F8 /* GetAlarmRecordResult.m in Sources */,
 				EABC8CFB1D958F0800F1F13D /* CameraManager.m in Sources */,
 				EABC8CC01D957E7B00F1F13D /* des2.c in Sources */,
 				EABC8CAD1D957C8500F1F13D /* Contact.m in Sources */,
@@ -578,25 +646,32 @@
 				EABC8CE31D958D0700F1F13D /* RtspInterface.mm in Sources */,
 				EABC8CC41D9581A700F1F13D /* ShakeManager.m in Sources */,
 				EABC8CD11D95835200F1F13D /* LoginResult.m in Sources */,
+				EA3FDD4B1D996D78005031F8 /* ModifyLoginPasswordResult.m in Sources */,
 				EA49141D1D9474C200BE7B9D /* DeviceListViewController.m in Sources */,
 				EABC8CBD1D957E3800F1F13D /* FListManager.m in Sources */,
 				EABC8CDE1D95839A00F1F13D /* FMResultSet.m in Sources */,
 				EA4176081D9534DD00EC876F /* empty.mm in Sources */,
 				EABC8CCD1D9582B400F1F13D /* LocalDevice.m in Sources */,
+				EA3FDD451D996D20005031F8 /* NetManager.m in Sources */,
 				EABC8CB61D957D9C00F1F13D /* Utils.m in Sources */,
 				EA4914201D94764600BE7B9D /* AddDeviceViewController.m in Sources */,
 				EABC8D021D958F7100F1F13D /* FfmpegInterface.m in Sources */,
 				EABC8CA81D95682100F1F13D /* PasswordViewController.m in Sources */,
+				EA3FDD541D996DB2005031F8 /* GetContactMessageResult.m in Sources */,
 				EABC8CE61D958D3C00F1F13D /* Alarm.m in Sources */,
 				EABC8CCA1D95828F00F1F13D /* UDManager.m in Sources */,
 				EA4913EA1D94741300BE7B9D /* AppDelegate.m in Sources */,
 				EABC8CBA1D957DD600F1F13D /* PAIOUnit.m in Sources */,
+				EA3FDD571D996DD8005031F8 /* CheckAlarmMessageResult.m in Sources */,
 				EABC8CB21D957D3000F1F13D /* P2PClient.m in Sources */,
 				EABC8CDD1D95839A00F1F13D /* FMDatabaseQueue.m in Sources */,
 				EABC8CF41D958E7800F1F13D /* MPNotificationView.m in Sources */,
 				EABC8CDC1D95839A00F1F13D /* FMDatabasePool.m in Sources */,
 				EA4176041D95267C00EC876F /* GCDAsyncUdpSocket.m in Sources */,
+				EA3FDD4E1D996D8A005031F8 /* RegisterResult.m in Sources */,
+				EA3FDD481D996D53005031F8 /* AccountResult.m in Sources */,
 				EABC8CE91D958D5800F1F13D /* AlarmDAO.m in Sources */,
+				EA3FDD511D996DA2005031F8 /* CheckNewMessageResult.m in Sources */,
 				EABC8CEF1D958DA800F1F13D /* RecommendInfoDAO.m in Sources */,
 				EA4913E71D94741300BE7B9D /* main.m in Sources */,
 			);
@@ -743,7 +818,12 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libstdc++";
+				DEVELOPMENT_TEAM = 45CBN28GD4;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = yooseeme/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -753,6 +833,7 @@
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)/yoosee/**",
 					"$(PROJECT_DIR)/yoosee/wifi",
+					"$(PROJECT_DIR)/yoosee/Libraries",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ailinykh.yooseeme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -765,7 +846,12 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libstdc++";
+				DEVELOPMENT_TEAM = 45CBN28GD4;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = yooseeme/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -775,6 +861,7 @@
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)/yoosee/**",
 					"$(PROJECT_DIR)/yoosee/wifi",
+					"$(PROJECT_DIR)/yoosee/Libraries",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ailinykh.yooseeme;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -7,9 +7,15 @@
 //
 
 #import "DeviceListViewController.h"
+#import "FListManager.h"
+#import "Contact.h"
+#import "NetManager.h"
+#import "LoginResult.h"
+#import "AccountResult.h"
+#import "UDManager.h"
 
 @interface DeviceListViewController ()
-
+@property (retain, nonatomic) NSMutableArray *contacts;
 @end
 
 @implementation DeviceListViewController
@@ -17,39 +23,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    NSString *username = @"wificamera@mail.ru";
+    NSString *password = @"123456";
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [[NetManager sharedManager] loginWithUserName:username password:password token:nil callBack:^(id JSON) {
+        LoginResult *loginResult = (LoginResult*)JSON;
+        switch (loginResult.error_code) {
+            case NET_RET_LOGIN_SUCCESS: {
+                [UDManager setIsLogin:YES];
+                [UDManager setLoginInfo:loginResult];
+                [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"USER_NAME"];
+                [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"LOGIN_TYPE"];
+                
+                [[NetManager sharedManager] getAccountInfo:loginResult.contactId sessionId:loginResult.sessionId callBack:^(id JSON){
+                    AccountResult *accountResult = (AccountResult*)JSON;
+                    loginResult.email = accountResult.email;
+                    loginResult.phone = accountResult.phone;
+                    loginResult.countryCode = accountResult.countryCode;
+                    [UDManager setLoginInfo:loginResult];
+                }];
+                break;
+            }
+            default:
+                break;
+        }
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    _contacts = [[NSMutableArray alloc] initWithArray:[[FListManager sharedFList] getContacts]];
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return _contacts.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
     
     // Configure the cell...
+    Contact *contact = _contacts[indexPath.row];
+    cell.textLabel.text = contact.contactName;
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
