@@ -27,10 +27,6 @@
 @implementation AddDeviceViewController
 static NSString *kWiFiPasswordString = @"kWiFiPasswordString";
 
-- (void)dealloc {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self scanWiFiNetwork];
@@ -42,6 +38,7 @@ static NSString *kWiFiPasswordString = @"kWiFiPasswordString";
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
     if (self.socket) {
         [self.socket close];
     }
