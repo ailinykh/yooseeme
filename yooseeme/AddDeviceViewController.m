@@ -39,6 +39,7 @@ static NSString *kWiFiPasswordString = @"kWiFiPasswordString";
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    elianDestroy(_context);
     if (self.socket) {
         [self.socket close];
     }
@@ -100,7 +101,8 @@ static NSString *kWiFiPasswordString = @"kWiFiPasswordString";
     if (_attempts++ < 3)
     {
         [_activityIndicator startAnimating];
-        elianStart(_context);
+        int result = elianStart(_context);
+        NSLog(@"elian started with status: %d", result);
         [self performSelector:@selector(stopSmartConnection) withObject:nil afterDelay:20];
     }
 }
@@ -114,24 +116,22 @@ static NSString *kWiFiPasswordString = @"kWiFiPasswordString";
 #pragma mark - Socket
 
 - (void)prepareSocket {
-    GCDAsyncUdpSocket *socket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
+    _socket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
     NSError *error = nil;
     
-    if (![socket bindToPort:9988 error:&error])
+    if (![_socket bindToPort:9988 error:&error])
     {
         NSLog(@"Error binding: %@", [error localizedDescription]);
     }
-    if (![socket beginReceiving:&error])
+    if (![_socket beginReceiving:&error])
     {
         NSLog(@"Error receiving: %@", [error localizedDescription]);
     }
     
-    if (![socket enableBroadcast:YES error:&error])
+    if (![_socket enableBroadcast:YES error:&error])
     {
         NSLog(@"Error enableBroadcast: %@", [error localizedDescription]);
     }
-    
-    self.socket = socket;
 }
 
 #pragma mark - Text field delegate
@@ -164,7 +164,7 @@ static NSString *kWiFiPasswordString = @"kWiFiPasswordString";
 
 - (void)udpSocketDidClose:(GCDAsyncUdpSocket *)sock withError:(NSError *)error
 {
-    NSLog(@"error %@", error);
+    NSLog(@"socket closed with error: %@", error);
 }
 
 #pragma mark 搜索设备
@@ -182,15 +182,17 @@ withFilterContext:(id)filterContext
             [GCDAsyncUdpSocket getHost:&host port:&port fromAddress:address];
             
             int contactId = *(int*)(&receiveBuffer[16]);
-            int type = *(int*)(&receiveBuffer[20]);
-            int flag = *(int*)(&receiveBuffer[24]);
+//            int type = *(int*)(&receiveBuffer[20]);
+//            int flag = *(int*)(&receiveBuffer[24]);
             
             NSLog(@"CONTACT_ID:%d", contactId);
-            _deviceId = [NSString stringWithFormat:@"%d", contactId];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self performSegueWithIdentifier:@"PasswordSegueIdentifier" sender:nil];
-            });
+            if (!_deviceId) {
+                _deviceId = [NSString stringWithFormat:@"%d", contactId];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self performSegueWithIdentifier:@"PasswordSegueIdentifier" sender:nil];
+                });
+            }
         }
     }
 }
