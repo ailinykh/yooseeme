@@ -11,6 +11,7 @@
 #import "LoginResult.h"
 #import "AccountResult.h"
 #import "UDManager.h"
+#import "P2PClient.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) NSString *token;
@@ -85,6 +86,8 @@
                     loginResult.phone = accountResult.phone;
                     loginResult.countryCode = accountResult.countryCode;
                     [UDManager setLoginInfo:loginResult];
+                    
+                    [[P2PClient sharedClient] p2pConnectWithId:loginResult.contactId codeStr1:loginResult.rCode1 codeStr2:loginResult.rCode2];
                 }];
                 break;
             }

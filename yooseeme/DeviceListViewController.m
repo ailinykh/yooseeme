@@ -9,6 +9,8 @@
 #import "DeviceListViewController.h"
 #import "FListManager.h"
 #import "Contact.h"
+#import "P2PClient.h"
+#import "DeviceSettingsViewController.h"
 
 @interface DeviceListViewController ()
 @property (nonatomic, strong) NSMutableArray *contacts;
@@ -16,8 +18,16 @@
 
 @implementation DeviceListViewController
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveRemoteMessage:) name:RECEIVE_REMOTE_MESSAGE object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ack_receiveRemoteMessage:) name:ACK_RECEIVE_REMOTE_MESSAGE object:nil];
+    
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(reloadContacts) forControlEvents:UIControlEventValueChanged];
 }
@@ -33,6 +43,16 @@
     _contacts = [[NSMutableArray alloc] initWithArray:[[FListManager sharedFList] getContacts]];
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
+}
+
+- (void)receiveRemoteMessage:(NSNotification*)note
+{
+    NSLog(@"%s %@", __PRETTY_FUNCTION__, note.userInfo);
+}
+
+- (void)ack_receiveRemoteMessage:(NSNotification*)note
+{
+    NSLog(@"%s %@", __PRETTY_FUNCTION__, note.userInfo);
 }
 
 #pragma mark - Table view data source
@@ -52,52 +72,14 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
+#pragma mark - segue
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.destinationViewController isKindOfClass:DeviceSettingsViewController.class]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Contact *contact = _contacts[indexPath.row];
+        [(DeviceSettingsViewController*)segue.destinationViewController setContact:contact];
+    }
 }
-*/
 
 @end

@@ -63,6 +63,7 @@
 		EABC8CFB1D958F0800F1F13D /* CameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CFA1D958F0800F1F13D /* CameraManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EABC8CFE1D958F2000F1F13D /* UDPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CFD1D958F2000F1F13D /* UDPManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EABC8D021D958F7100F1F13D /* FfmpegInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8D011D958F7100F1F13D /* FfmpegInterface.m */; };
+		EADC72051D9AA2DF003AFD78 /* DeviceSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC72041D9AA2DF003AFD78 /* DeviceSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +196,8 @@
 		EABC8CFD1D958F2000F1F13D /* UDPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPManager.m; sourceTree = "<group>"; };
 		EABC8D001D958F7100F1F13D /* FfmpegInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FfmpegInterface.h; sourceTree = "<group>"; };
 		EABC8D011D958F7100F1F13D /* FfmpegInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FfmpegInterface.m; sourceTree = "<group>"; };
+		EADC72031D9AA2DF003AFD78 /* DeviceSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceSettingsViewController.h; sourceTree = "<group>"; };
+		EADC72041D9AA2DF003AFD78 /* DeviceSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +303,8 @@
 				EA4913E91D94741300BE7B9D /* AppDelegate.m */,
 				EA49141B1D9474C200BE7B9D /* DeviceListViewController.h */,
 				EA49141C1D9474C200BE7B9D /* DeviceListViewController.m */,
+				EADC72031D9AA2DF003AFD78 /* DeviceSettingsViewController.h */,
+				EADC72041D9AA2DF003AFD78 /* DeviceSettingsViewController.m */,
 				EA49141E1D94764600BE7B9D /* AddDeviceViewController.h */,
 				EA49141F1D94764600BE7B9D /* AddDeviceViewController.m */,
 				EABC8CA61D95682100F1F13D /* PasswordViewController.h */,
@@ -669,6 +674,7 @@
 				EABC8CDC1D95839A00F1F13D /* FMDatabasePool.m in Sources */,
 				EA4176041D95267C00EC876F /* GCDAsyncUdpSocket.m in Sources */,
 				EA3FDD4E1D996D8A005031F8 /* RegisterResult.m in Sources */,
+				EADC72051D9AA2DF003AFD78 /* DeviceSettingsViewController.m in Sources */,
 				EA3FDD481D996D53005031F8 /* AccountResult.m in Sources */,
 				EABC8CE91D958D5800F1F13D /* AlarmDAO.m in Sources */,
 				EA3FDD511D996DA2005031F8 /* CheckNewMessageResult.m in Sources */,
