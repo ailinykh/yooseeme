@@ -64,6 +64,7 @@
 		EABC8CFE1D958F2000F1F13D /* UDPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8CFD1D958F2000F1F13D /* UDPManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EABC8D021D958F7100F1F13D /* FfmpegInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = EABC8D011D958F7100F1F13D /* FfmpegInterface.m */; };
 		EADC72051D9AA2DF003AFD78 /* DeviceSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADC72041D9AA2DF003AFD78 /* DeviceSettingsViewController.m */; };
+		EAE728EC1D9B0F9C00B854DF /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE728EB1D9B0F9C00B854DF /* ChangePasswordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,8 @@
 		EABC8D011D958F7100F1F13D /* FfmpegInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FfmpegInterface.m; sourceTree = "<group>"; };
 		EADC72031D9AA2DF003AFD78 /* DeviceSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceSettingsViewController.h; sourceTree = "<group>"; };
 		EADC72041D9AA2DF003AFD78 /* DeviceSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceSettingsViewController.m; sourceTree = "<group>"; };
+		EAE728EA1D9B0F9C00B854DF /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		EAE728EB1D9B0F9C00B854DF /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +312,8 @@
 				EA49141F1D94764600BE7B9D /* AddDeviceViewController.m */,
 				EABC8CA61D95682100F1F13D /* PasswordViewController.h */,
 				EABC8CA71D95682100F1F13D /* PasswordViewController.m */,
+				EAE728EA1D9B0F9C00B854DF /* ChangePasswordViewController.h */,
+				EAE728EB1D9B0F9C00B854DF /* ChangePasswordViewController.m */,
 				EA4913F11D94741400BE7B9D /* Assets.xcassets */,
 				EA4913F61D94741400BE7B9D /* Info.plist */,
 				EA4913F31D94741400BE7B9D /* LaunchScreen.storyboard */,
@@ -658,6 +663,7 @@
 				EA4176081D9534DD00EC876F /* empty.mm in Sources */,
 				EABC8CCD1D9582B400F1F13D /* LocalDevice.m in Sources */,
 				EA3FDD451D996D20005031F8 /* NetManager.m in Sources */,
+				EAE728EC1D9B0F9C00B854DF /* ChangePasswordViewController.m in Sources */,
 				EABC8CB61D957D9C00F1F13D /* Utils.m in Sources */,
 				EA4914201D94764600BE7B9D /* AddDeviceViewController.m in Sources */,
 				EABC8D021D958F7100F1F13D /* FfmpegInterface.m in Sources */,

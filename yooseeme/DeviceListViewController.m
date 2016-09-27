@@ -11,6 +11,7 @@
 #import "Contact.h"
 #import "P2PClient.h"
 #import "DeviceSettingsViewController.h"
+#import "ChangePasswordViewController.h"
 
 @interface DeviceListViewController ()
 @property (nonatomic, strong) NSMutableArray *contacts;
@@ -70,6 +71,23 @@
     cell.textLabel.text = contact.contactName;
     
     return cell;
+}
+
+#pragma mark - table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    Contact *contact = _contacts[indexPath.row];
+    NSString *weakPwd = [contact.contactPassword substringToIndex:1];
+    if (![weakPwd isEqualToString:@"0"]) {//弱（红）
+        ChangePasswordViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"changePasswordViewController"];
+        vc.contact = contact;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        DeviceSettingsViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"deviceSettingsViewController"];
+        vc.contact = contact;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 #pragma mark - segue

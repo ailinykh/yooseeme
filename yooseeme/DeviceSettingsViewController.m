@@ -50,11 +50,18 @@
     switch (key) {
         case ACK_RET_GET_DEFENCE_STATE:
             [_guardSwitch setOn:result == 1];
+            NSLog(@"ACK_RET_GET_DEFENCE_STATE: %@", result == 1 ? @"YES" : @"NO");
             break;
+        case RET_GET_NPCSETTINGS_MOTION:
+            [_motionSwitch setOn:result == 1];
+            NSLog(@"RET_GET_NPCSETTINGS_MOTION: %@", result == 1 ? @"YES" : @"NO");
+        case RET_SET_NPCSETTINGS_MOTION:
+            [_motionSwitch setOn:result == 1];
+            NSLog(@"RET_SET_NPCSETTINGS_MOTION: %@", result == 1 ? @"YES" : @"NO");
         default:
+            NSLog(@"%s %@", __PRETTY_FUNCTION__, note.userInfo);
             break;
     }
-    NSLog(@"%s %@", __PRETTY_FUNCTION__, note.userInfo);
 }
 
 @end
