@@ -7,9 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "NetManager.h"
+#import "LoginResult.h"
+#import "AccountResult.h"
+#import "UDManager.h"
 
 @interface AppDelegate ()
-
+@property (strong, nonatomic) NSString *token;
 @end
 
 @implementation AppDelegate
@@ -17,6 +21,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil];
+    [application registerUserNotificationSettings:settings];
+    
     return YES;
 }
 
@@ -40,6 +48,50 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    [application registerForRemoteNotifications];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    _token = [[[[deviceToken description]
+                stringByReplacingOccurrencesOfString: @"<" withString: @""]
+                stringByReplacingOccurrencesOfString: @">" withString: @""]
+                stringByReplacingOccurrencesOfString: @" " withString: @""];
+    [self initConnection];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    [self initConnection];
+}
+
+- (void)initConnection {
+    NSString *username = @"wificamera@mail.ru";
+    NSString *password = @"123456";
+    
+    [[NetManager sharedManager] loginWithUserName:username password:password token:_token callBack:^(id JSON) {
+        LoginResult *loginResult = (LoginResult*)JSON;
+        switch (loginResult.error_code) {
+            case NET_RET_LOGIN_SUCCESS: {
+                [UDManager setIsLogin:YES];
+                [UDManager setLoginInfo:loginResult];
+                [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"USER_NAME"];
+                [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"LOGIN_TYPE"];
+                
+                [[NetManager sharedManager] getAccountInfo:loginResult.contactId sessionId:loginResult.sessionId callBack:^(id JSON){
+                    AccountResult *accountResult = (AccountResult*)JSON;
+                    loginResult.email = accountResult.email;
+                    loginResult.phone = accountResult.phone;
+                    loginResult.countryCode = accountResult.countryCode;
+                    [UDManager setLoginInfo:loginResult];
+                }];
+                break;
+            }
+            default:
+                break;
+        }
+    }];
 }
 
 @end

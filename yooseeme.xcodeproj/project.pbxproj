@@ -296,19 +296,19 @@
 		EA4913E41D94741300BE7B9D /* yooseeme */ = {
 			isa = PBXGroup;
 			children = (
-				EA4913E51D94741300BE7B9D /* Supporting Files */,
-				EA49141E1D94764600BE7B9D /* AddDeviceViewController.h */,
-				EA49141F1D94764600BE7B9D /* AddDeviceViewController.m */,
 				EA4913E81D94741300BE7B9D /* AppDelegate.h */,
 				EA4913E91D94741300BE7B9D /* AppDelegate.m */,
-				EA4913F11D94741400BE7B9D /* Assets.xcassets */,
 				EA49141B1D9474C200BE7B9D /* DeviceListViewController.h */,
 				EA49141C1D9474C200BE7B9D /* DeviceListViewController.m */,
+				EA49141E1D94764600BE7B9D /* AddDeviceViewController.h */,
+				EA49141F1D94764600BE7B9D /* AddDeviceViewController.m */,
+				EABC8CA61D95682100F1F13D /* PasswordViewController.h */,
+				EABC8CA71D95682100F1F13D /* PasswordViewController.m */,
+				EA4913F11D94741400BE7B9D /* Assets.xcassets */,
 				EA4913F61D94741400BE7B9D /* Info.plist */,
 				EA4913F31D94741400BE7B9D /* LaunchScreen.storyboard */,
 				EA4913EE1D94741300BE7B9D /* Main.storyboard */,
-				EABC8CA61D95682100F1F13D /* PasswordViewController.h */,
-				EABC8CA71D95682100F1F13D /* PasswordViewController.m */,
+				EA4913E51D94741300BE7B9D /* Supporting Files */,
 			);
 			path = yooseeme;
 			sourceTree = "<group>";
