@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EA2F8F151D9BC94C009F300C /* MD5Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2F8F141D9BC94C009F300C /* MD5Manager.m */; };
+		EA2F8F171D9C12AD009F300C /* alarm_push_ring.caf in Resources */ = {isa = PBXBuildFile; fileRef = EA2F8F161D9C12AD009F300C /* alarm_push_ring.caf */; };
 		EA3FDD281D9930DB005031F8 /* libRTSP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3FDD271D9930DB005031F8 /* libRTSP.a */; };
 		EA3FDD2B1D993170005031F8 /* libAVCtrl_i386.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3FDD2A1D993170005031F8 /* libAVCtrl_i386.a */; };
 		EA3FDD2E1D9931F7005031F8 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3FDD2D1D9931F7005031F8 /* libsqlite3.0.tbd */; };
@@ -88,6 +89,7 @@
 /* Begin PBXFileReference section */
 		EA2F8F131D9BC94C009F300C /* MD5Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5Manager.h; sourceTree = "<group>"; };
 		EA2F8F141D9BC94C009F300C /* MD5Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD5Manager.m; sourceTree = "<group>"; };
+		EA2F8F161D9C12AD009F300C /* alarm_push_ring.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = alarm_push_ring.caf; sourceTree = "<group>"; };
 		EA3FDD261D992D92005031F8 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = avcodec.h; path = ffmpeg/libavcodec/avcodec.h; sourceTree = "<group>"; };
 		EA3FDD271D9930DB005031F8 /* libRTSP.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRTSP.a; path = yoosee/wifi/libRTSP.a; sourceTree = "<group>"; };
 		EA3FDD2A1D993170005031F8 /* libAVCtrl_i386.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAVCtrl_i386.a; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		EA4913E51D94741300BE7B9D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA2F8F161D9C12AD009F300C /* alarm_push_ring.caf */,
 				EA4913E61D94741300BE7B9D /* main.m */,
 			);
 			path = "Supporting Files";
@@ -624,6 +627,7 @@
 			files = (
 				EA4913F51D94741400BE7B9D /* LaunchScreen.storyboard in Resources */,
 				EA4913F21D94741400BE7B9D /* Assets.xcassets in Resources */,
+				EA2F8F171D9C12AD009F300C /* alarm_push_ring.caf in Resources */,
 				EA4913F01D94741300BE7B9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
