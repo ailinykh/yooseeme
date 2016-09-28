@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA2F8F151D9BC94C009F300C /* MD5Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2F8F141D9BC94C009F300C /* MD5Manager.m */; };
 		EA3FDD281D9930DB005031F8 /* libRTSP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3FDD271D9930DB005031F8 /* libRTSP.a */; };
 		EA3FDD2B1D993170005031F8 /* libAVCtrl_i386.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3FDD2A1D993170005031F8 /* libAVCtrl_i386.a */; };
 		EA3FDD2E1D9931F7005031F8 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3FDD2D1D9931F7005031F8 /* libsqlite3.0.tbd */; };
@@ -85,6 +86,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA2F8F131D9BC94C009F300C /* MD5Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5Manager.h; sourceTree = "<group>"; };
+		EA2F8F141D9BC94C009F300C /* MD5Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD5Manager.m; sourceTree = "<group>"; };
 		EA3FDD261D992D92005031F8 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = avcodec.h; path = ffmpeg/libavcodec/avcodec.h; sourceTree = "<group>"; };
 		EA3FDD271D9930DB005031F8 /* libRTSP.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRTSP.a; path = yoosee/wifi/libRTSP.a; sourceTree = "<group>"; };
 		EA3FDD2A1D993170005031F8 /* libAVCtrl_i386.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAVCtrl_i386.a; sourceTree = "<group>"; };
@@ -428,6 +431,8 @@
 				EABC8CC31D9581A700F1F13D /* ShakeManager.m */,
 				EABC8CB41D957D9C00F1F13D /* Utils.h */,
 				EABC8CB51D957D9C00F1F13D /* Utils.m */,
+				EA2F8F131D9BC94C009F300C /* MD5Manager.h */,
+				EA2F8F141D9BC94C009F300C /* MD5Manager.m */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -669,6 +674,7 @@
 				EABC8D021D958F7100F1F13D /* FfmpegInterface.m in Sources */,
 				EABC8CA81D95682100F1F13D /* PasswordViewController.m in Sources */,
 				EA3FDD541D996DB2005031F8 /* GetContactMessageResult.m in Sources */,
+				EA2F8F151D9BC94C009F300C /* MD5Manager.m in Sources */,
 				EABC8CE61D958D3C00F1F13D /* Alarm.m in Sources */,
 				EABC8CCA1D95828F00F1F13D /* UDManager.m in Sources */,
 				EA4913EA1D94741300BE7B9D /* AppDelegate.m in Sources */,
