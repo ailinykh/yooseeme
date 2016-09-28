@@ -12,6 +12,8 @@
 #import "AccountResult.h"
 #import "UDManager.h"
 #import "P2PClient.h"
+#import "Contact.h"
+#import "ContactDAO.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) NSString *token;
@@ -25,6 +27,8 @@
     
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil];
     [application registerUserNotificationSettings:settings];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onReceiveAlarmMessage:) name:RECEIVE_ALARM_MESSAGE object:nil];
     
     return YES;
 }
@@ -95,6 +99,32 @@
                 break;
         }
     }];
+}
+
+- (void)onReceiveAlarmMessage:(NSNotification *)notification {
+    
+    NSDictionary *parameter = [notification userInfo];
+    
+    //contact name
+    NSString *contactId   = [parameter valueForKey:@"contactId"];
+    ContactDAO *contactDAO = [[ContactDAO alloc] init];
+    Contact *contact = [contactDAO isContact:contactId];
+    NSString *contactName = contact.contactName;
+    NSString *typeStr = NSLocalizedString(@"motion_dect_alarm", nil);
+    
+    NSLog(@"ALARM MESSAGE RECEIVED!");
+    UILocalNotification *alarmNotify = [[UILocalNotification alloc] init];
+    alarmNotify.fireDate = [NSDate dateWithTimeIntervalSinceNow:0];
+    alarmNotify.timeZone = [NSTimeZone defaultTimeZone];
+//    alarmNotify.soundName = [self playAlarmMessageRingWithAlarmType:type isBeBackground:YES];
+    if ([contactId isEqualToString:contactName] || contactName == nil) {
+        alarmNotify.alertBody = [NSString stringWithFormat:@"%@:%@",contactId,typeStr];
+    }else{
+        alarmNotify.alertBody = [NSString stringWithFormat:@"%@:%@",contactName,typeStr];
+    }
+    alarmNotify.applicationIconBadgeNumber = 1;
+    alarmNotify.alertAction = NSLocalizedString(@"open", nil);
+    [[UIApplication sharedApplication] scheduleLocalNotification:alarmNotify];
 }
 
 @end
