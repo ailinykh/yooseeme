@@ -95,33 +95,42 @@
 }
 
 - (void)initConnection {
-    NSString *username = @"wificamera@mail.ru";
-    NSString *password = @"123456";
     
-    [[NetManager sharedManager] loginWithUserName:username password:password token:_token callBack:^(id JSON) {
-        LoginResult *loginResult = (LoginResult*)JSON;
-        switch (loginResult.error_code) {
-            case NET_RET_LOGIN_SUCCESS: {
-                [UDManager setIsLogin:YES];
-                [UDManager setLoginInfo:loginResult];
-                [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"USER_NAME"];
-                [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"LOGIN_TYPE"];
-                
-                [[NetManager sharedManager] getAccountInfo:loginResult.contactId sessionId:loginResult.sessionId callBack:^(id JSON){
-                    AccountResult *accountResult = (AccountResult*)JSON;
-                    loginResult.email = accountResult.email;
-                    loginResult.phone = accountResult.phone;
-                    loginResult.countryCode = accountResult.countryCode;
+    LoginResult *loginResult = [UDManager getLoginInfo];
+    
+    if (loginResult) {
+        [[P2PClient sharedClient] p2pConnectWithId:loginResult.contactId codeStr1:loginResult.rCode1 codeStr2:loginResult.rCode2];
+    }
+    else {
+        NSString *username = @"wificamera@mail.ru";
+        NSString *password = @"123456";
+        
+        [[NetManager sharedManager] loginWithUserName:username password:password token:_token callBack:^(id JSON) {
+            LoginResult *loginResult = (LoginResult*)JSON;
+            switch (loginResult.error_code) {
+                case NET_RET_LOGIN_SUCCESS: {
+                    [UDManager setIsLogin:YES];
                     [UDManager setLoginInfo:loginResult];
+                    [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"USER_NAME"];
+                    [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"LOGIN_TYPE"];
                     
-                    [[P2PClient sharedClient] p2pConnectWithId:loginResult.contactId codeStr1:loginResult.rCode1 codeStr2:loginResult.rCode2];
-                }];
-                break;
+                    [[NetManager sharedManager] getAccountInfo:loginResult.contactId sessionId:loginResult.sessionId callBack:^(id JSON){
+                        AccountResult *accountResult = (AccountResult*)JSON;
+                        loginResult.email = accountResult.email;
+                        loginResult.phone = accountResult.phone;
+                        loginResult.countryCode = accountResult.countryCode;
+                        [UDManager setLoginInfo:loginResult];
+                        
+                        [[P2PClient sharedClient] p2pConnectWithId:loginResult.contactId codeStr1:loginResult.rCode1 codeStr2:loginResult.rCode2];
+                    }];
+                    break;
+                }
+                default:
+                    NSLog(@"⚠️ User login problem!");
+                    break;
             }
-            default:
-                break;
-        }
-    }];
+        }];
+    }
 }
 
 - (void)onReceiveAlarmMessage:(NSNotification *)notification {
