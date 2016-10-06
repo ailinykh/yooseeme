@@ -29,6 +29,15 @@
 		EA3FDD5D1D996E4D005031F8 /* libPwdEncrypt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3FDD5C1D996E4D005031F8 /* libPwdEncrypt.a */; };
 		EA4176041D95267C00EC876F /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4176031D95267C00EC876F /* GCDAsyncUdpSocket.m */; };
 		EA4176081D9534DD00EC876F /* empty.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA4176071D9534DD00EC876F /* empty.mm */; };
+		EA41C98E1DA68B180049AB9E /* P2PMonitorController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA41C98D1DA68B180049AB9E /* P2PMonitorController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA41C9921DA68B790049AB9E /* TouchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EA41C9911DA68B790049AB9E /* TouchButton.m */; };
+		EA41C9951DA68BA10049AB9E /* OpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA41C9941DA68BA10049AB9E /* OpenGLView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA41C9981DA68BC10049AB9E /* CustomBorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EA41C9971DA68BC10049AB9E /* CustomBorderButton.m */; };
+		EA41C99B1DA68BC90049AB9E /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA41C99A1DA68BC90049AB9E /* CustomView.m */; };
+		EA41C99E1DA68BDE0049AB9E /* YProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA41C99D1DA68BDE0049AB9E /* YProgressView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA41C9A01DA68C850049AB9E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA41C99F1DA68C850049AB9E /* OpenGLES.framework */; };
+		EA41C9A21DA68C930049AB9E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA41C9A11DA68C930049AB9E /* OpenAL.framework */; };
+		EA41C9A61DA68E290049AB9E /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA41C9A51DA68E290049AB9E /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EA4913E71D94741300BE7B9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4913E61D94741300BE7B9D /* main.m */; };
 		EA4913EA1D94741300BE7B9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4913E91D94741300BE7B9D /* AppDelegate.m */; };
 		EA4913F01D94741300BE7B9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4913EE1D94741300BE7B9D /* Main.storyboard */; };
@@ -103,7 +112,6 @@
 		EA3FDD3B1D99559A005031F8 /* libAVCtrl_arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAVCtrl_arm64.a; sourceTree = "<group>"; };
 		EA3FDD3C1D99559A005031F8 /* libAVCtrl_armv7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAVCtrl_armv7.a; sourceTree = "<group>"; };
 		EA3FDD3D1D99559A005031F8 /* libAVCtrl_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAVCtrl_armv7s.a; sourceTree = "<group>"; };
-		EA3FDD411D996C8C005031F8 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		EA3FDD431D996D20005031F8 /* NetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetManager.h; sourceTree = "<group>"; };
 		EA3FDD441D996D20005031F8 /* NetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetManager.m; sourceTree = "<group>"; };
 		EA3FDD461D996D53005031F8 /* AccountResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountResult.h; sourceTree = "<group>"; };
@@ -125,6 +133,22 @@
 		EA4176021D95267C00EC876F /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		EA4176031D95267C00EC876F /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		EA4176071D9534DD00EC876F /* empty.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = empty.mm; sourceTree = "<group>"; };
+		EA41C98C1DA68B180049AB9E /* P2PMonitorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = P2PMonitorController.h; sourceTree = "<group>"; };
+		EA41C98D1DA68B180049AB9E /* P2PMonitorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = P2PMonitorController.m; sourceTree = "<group>"; };
+		EA41C9901DA68B790049AB9E /* TouchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchButton.h; sourceTree = "<group>"; };
+		EA41C9911DA68B790049AB9E /* TouchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchButton.m; sourceTree = "<group>"; };
+		EA41C9931DA68BA10049AB9E /* OpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLView.h; sourceTree = "<group>"; };
+		EA41C9941DA68BA10049AB9E /* OpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLView.m; sourceTree = "<group>"; };
+		EA41C9961DA68BC10049AB9E /* CustomBorderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBorderButton.h; sourceTree = "<group>"; };
+		EA41C9971DA68BC10049AB9E /* CustomBorderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBorderButton.m; sourceTree = "<group>"; };
+		EA41C9991DA68BC90049AB9E /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		EA41C99A1DA68BC90049AB9E /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		EA41C99C1DA68BDE0049AB9E /* YProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YProgressView.h; sourceTree = "<group>"; };
+		EA41C99D1DA68BDE0049AB9E /* YProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YProgressView.m; sourceTree = "<group>"; };
+		EA41C99F1DA68C850049AB9E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		EA41C9A11DA68C930049AB9E /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		EA41C9A41DA68E290049AB9E /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
+		EA41C9A51DA68E290049AB9E /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
 		EA4913E21D94741300BE7B9D /* yooseeme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yooseeme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4913E61D94741300BE7B9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EA4913E81D94741300BE7B9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -213,6 +237,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA41C9A21DA68C930049AB9E /* OpenAL.framework in Frameworks */,
+				EA41C9A01DA68C850049AB9E /* OpenGLES.framework in Frameworks */,
 				EA3FDD341D993341005031F8 /* libiconv.tbd in Frameworks */,
 				EA3FDD401D99559A005031F8 /* libAVCtrl_armv7s.a in Frameworks */,
 				EA3FDD321D99331F005031F8 /* libz.tbd in Frameworks */,
@@ -247,7 +273,8 @@
 		EA3FDD2C1D9931F7005031F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EA3FDD411D996C8C005031F8 /* AFNetworking.framework */,
+				EA41C9A11DA68C930049AB9E /* OpenAL.framework */,
+				EA41C99F1DA68C850049AB9E /* OpenGLES.framework */,
 				EA3FDD271D9930DB005031F8 /* libRTSP.a */,
 				EA3FDD2A1D993170005031F8 /* libAVCtrl_i386.a */,
 				EA3FDD3B1D99559A005031F8 /* libAVCtrl_arm64.a */,
@@ -280,6 +307,39 @@
 				EA4176031D95267C00EC876F /* GCDAsyncUdpSocket.m */,
 			);
 			path = GCDAsyncUdpSocket;
+			sourceTree = "<group>";
+		};
+		EA41C98B1DA68B000049AB9E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA41C98C1DA68B180049AB9E /* P2PMonitorController.h */,
+				EA41C98D1DA68B180049AB9E /* P2PMonitorController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EA41C98F1DA68B620049AB9E /* UIAdditional */ = {
+			isa = PBXGroup;
+			children = (
+				EA41C9901DA68B790049AB9E /* TouchButton.h */,
+				EA41C9911DA68B790049AB9E /* TouchButton.m */,
+				EA41C9961DA68BC10049AB9E /* CustomBorderButton.h */,
+				EA41C9971DA68BC10049AB9E /* CustomBorderButton.m */,
+				EA41C9991DA68BC90049AB9E /* CustomView.h */,
+				EA41C99A1DA68BC90049AB9E /* CustomView.m */,
+				EA41C99C1DA68BDE0049AB9E /* YProgressView.h */,
+				EA41C99D1DA68BDE0049AB9E /* YProgressView.m */,
+			);
+			name = UIAdditional;
+			sourceTree = "<group>";
+		};
+		EA41C9A31DA68DFD0049AB9E /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				EA41C9A41DA68E290049AB9E /* Toast+UIView.h */,
+				EA41C9A51DA68E290049AB9E /* Toast+UIView.m */,
+			);
+			name = Toast;
 			sourceTree = "<group>";
 		};
 		EA4913D91D94741300BE7B9D = {
@@ -358,6 +418,8 @@
 		EA7E86131D950C6B001C3CED /* yoosee */ = {
 			isa = PBXGroup;
 			children = (
+				EA41C98F1DA68B620049AB9E /* UIAdditional */,
+				EA41C98B1DA68B000049AB9E /* Controllers */,
 				EABC8CA91D957C6800F1F13D /* Databases */,
 				EA4176011D95266C00EC876F /* GCDAsyncUdpSocket */,
 				EABC8CB31D957D8400F1F13D /* Global */,
@@ -410,6 +472,8 @@
 		EABC8CAE1D957CF300F1F13D /* P2PCore */ = {
 			isa = PBXGroup;
 			children = (
+				EA41C9931DA68BA10049AB9E /* OpenGLView.h */,
+				EA41C9941DA68BA10049AB9E /* OpenGLView.m */,
 				EABC8CF91D958F0800F1F13D /* CameraManager.h */,
 				EABC8CFA1D958F0800F1F13D /* CameraManager.m */,
 				EABC8CAF1D957D3000F1F13D /* P2PCInterface.h */,
@@ -496,6 +560,7 @@
 		EABC8CF01D958E5F00F1F13D /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				EA41C9A31DA68DFD0049AB9E /* Toast */,
 				EA3FDD5B1D996E3C005031F8 /* libPwdEncrypt */,
 				EABC8CF11D958E6E00F1F13D /* MPNotificationView */,
 				EABC8CF51D958E9E00F1F13D /* OBGradientView */,
@@ -673,14 +738,18 @@
 				EABC8CCD1D9582B400F1F13D /* LocalDevice.m in Sources */,
 				EA3FDD451D996D20005031F8 /* NetManager.m in Sources */,
 				EAE728EC1D9B0F9C00B854DF /* ChangePasswordViewController.m in Sources */,
+				EA41C99E1DA68BDE0049AB9E /* YProgressView.m in Sources */,
 				EABC8CB61D957D9C00F1F13D /* Utils.m in Sources */,
 				EA4914201D94764600BE7B9D /* AddDeviceViewController.m in Sources */,
 				EABC8D021D958F7100F1F13D /* FfmpegInterface.m in Sources */,
+				EA41C9951DA68BA10049AB9E /* OpenGLView.m in Sources */,
 				EABC8CA81D95682100F1F13D /* PasswordViewController.m in Sources */,
+				EA41C9A61DA68E290049AB9E /* Toast+UIView.m in Sources */,
 				EA3FDD541D996DB2005031F8 /* GetContactMessageResult.m in Sources */,
 				EA2F8F151D9BC94C009F300C /* MD5Manager.m in Sources */,
 				EABC8CE61D958D3C00F1F13D /* Alarm.m in Sources */,
 				EABC8CCA1D95828F00F1F13D /* UDManager.m in Sources */,
+				EA41C99B1DA68BC90049AB9E /* CustomView.m in Sources */,
 				EA4913EA1D94741300BE7B9D /* AppDelegate.m in Sources */,
 				EABC8CBA1D957DD600F1F13D /* PAIOUnit.m in Sources */,
 				EA3FDD571D996DD8005031F8 /* CheckAlarmMessageResult.m in Sources */,
@@ -692,10 +761,13 @@
 				EA3FDD4E1D996D8A005031F8 /* RegisterResult.m in Sources */,
 				EADC72051D9AA2DF003AFD78 /* DeviceSettingsViewController.m in Sources */,
 				EA3FDD481D996D53005031F8 /* AccountResult.m in Sources */,
+				EA41C98E1DA68B180049AB9E /* P2PMonitorController.m in Sources */,
 				EABC8CE91D958D5800F1F13D /* AlarmDAO.m in Sources */,
 				EA3FDD511D996DA2005031F8 /* CheckNewMessageResult.m in Sources */,
+				EA41C9921DA68B790049AB9E /* TouchButton.m in Sources */,
 				EABC8CEF1D958DA800F1F13D /* RecommendInfoDAO.m in Sources */,
 				EA4913E71D94741300BE7B9D /* main.m in Sources */,
+				EA41C9981DA68BC10049AB9E /* CustomBorderButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
