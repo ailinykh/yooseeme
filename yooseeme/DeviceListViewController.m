@@ -12,14 +12,20 @@
 #import "P2PClient.h"
 #import "DeviceSettingsViewController.h"
 #import "ChangePasswordViewController.h"
+#import "UDPManager.h"
+#import "Utils.h"
+#import "Reachability.h"
 
 @interface DeviceListViewController ()
 @property (nonatomic, strong) NSMutableArray *contacts;
+@property (nonatomic) NSArray *localDeviceArray;
+@property (nonatomic) Reachability *hostReachability;
 @end
 
 @implementation DeviceListViewController
 
 - (void)dealloc {
+    [_hostReachability stopNotifier];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -28,6 +34,10 @@
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveRemoteMessage:) name:RECEIVE_REMOTE_MESSAGE object:nil];
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ack_receiveRemoteMessage:) name:ACK_RECEIVE_REMOTE_MESSAGE object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshLanDevices) name:kReachabilityChangedNotification object:nil];
+    
+    _hostReachability = [Reachability reachabilityWithHostName:@"www.baidu.com"];
+    [_hostReachability startNotifier];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(reloadContacts) forControlEvents:UIControlEventValueChanged];
@@ -41,6 +51,7 @@
 - (void)reloadContacts
 {
     [self.refreshControl beginRefreshing];
+    [self refreshLanDevices];
     _contacts = [[NSMutableArray alloc] initWithArray:[[FListManager sharedFList] getContacts]];
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
@@ -56,9 +67,25 @@
     NSLog(@"%s %@", __PRETTY_FUNCTION__, note.userInfo);
 }
 
+- (void)refreshLanDevices {
+    NSArray *lanDeviceArray = [[UDPManager sharedDefault] getLanDevices];
+    NSMutableArray *array = [Utils getNewDevicesFromLan:lanDeviceArray];
+    if (array.count != _localDeviceArray.count) {
+        _localDeviceArray = array;
+        [self.tableView reloadData];
+    }
+}
+
 #pragma mark - Table view data source
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return _localDeviceArray.count > 0 ? 2 : 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (_localDeviceArray.count > 0 && section == 0) {
+        return _localDeviceArray.count;
+    }
     return _contacts.count;
 }
 
@@ -67,8 +94,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
     
     // Configure the cell...
-    Contact *contact = _contacts[indexPath.row];
-    cell.textLabel.text = contact.contactName;
+    if (_localDeviceArray.count > 0 && indexPath.section == 0) {
+        LocalDevice *device = _localDeviceArray[indexPath.row];
+        cell.textLabel.text = device.contactId;
+    } else {
+        Contact *contact = _contacts[indexPath.row];
+        cell.textLabel.text = contact.contactName;
+    }
     
     return cell;
 }

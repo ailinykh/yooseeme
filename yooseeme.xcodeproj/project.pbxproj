@@ -38,6 +38,7 @@
 		EA41C9A01DA68C850049AB9E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA41C99F1DA68C850049AB9E /* OpenGLES.framework */; };
 		EA41C9A21DA68C930049AB9E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA41C9A11DA68C930049AB9E /* OpenAL.framework */; };
 		EA41C9A61DA68E290049AB9E /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA41C9A51DA68E290049AB9E /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EA41C9A91DA69A040049AB9E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EA41C9A81DA69A040049AB9E /* Reachability.m */; };
 		EA4913E71D94741300BE7B9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4913E61D94741300BE7B9D /* main.m */; };
 		EA4913EA1D94741300BE7B9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4913E91D94741300BE7B9D /* AppDelegate.m */; };
 		EA4913F01D94741300BE7B9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4913EE1D94741300BE7B9D /* Main.storyboard */; };
@@ -149,6 +150,8 @@
 		EA41C9A11DA68C930049AB9E /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		EA41C9A41DA68E290049AB9E /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
 		EA41C9A51DA68E290049AB9E /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
+		EA41C9A71DA69A040049AB9E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		EA41C9A81DA69A040049AB9E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		EA4913E21D94741300BE7B9D /* yooseeme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yooseeme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4913E61D94741300BE7B9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EA4913E81D94741300BE7B9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -500,6 +503,8 @@
 				EABC8CB51D957D9C00F1F13D /* Utils.m */,
 				EA2F8F131D9BC94C009F300C /* MD5Manager.h */,
 				EA2F8F141D9BC94C009F300C /* MD5Manager.m */,
+				EA41C9A71DA69A040049AB9E /* Reachability.h */,
+				EA41C9A81DA69A040049AB9E /* Reachability.m */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -734,6 +739,7 @@
 				EA49141D1D9474C200BE7B9D /* DeviceListViewController.m in Sources */,
 				EABC8CBD1D957E3800F1F13D /* FListManager.m in Sources */,
 				EABC8CDE1D95839A00F1F13D /* FMResultSet.m in Sources */,
+				EA41C9A91DA69A040049AB9E /* Reachability.m in Sources */,
 				EA4176081D9534DD00EC876F /* empty.mm in Sources */,
 				EABC8CCD1D9582B400F1F13D /* LocalDevice.m in Sources */,
 				EA3FDD451D996D20005031F8 /* NetManager.m in Sources */,

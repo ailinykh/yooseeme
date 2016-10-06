@@ -11,6 +11,7 @@
 #import "LoginResult.h"
 #import "AccountResult.h"
 #import "UDManager.h"
+#import "UDPManager.h"
 #import "P2PClient.h"
 #import "Contact.h"
 #import "ContactDAO.h"
@@ -33,6 +34,8 @@
     [application registerUserNotificationSettings:settings];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onReceiveAlarmMessage:) name:RECEIVE_ALARM_MESSAGE object:nil];
+    
+    [[UDPManager sharedDefault] ScanLanDevice];
     
     return YES;
 }
