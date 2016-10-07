@@ -1008,6 +1008,16 @@ void   vFriendsStatusUpdate(sFriendsType * pFriends )
         if (self.delegate && [self.delegate respondsToSelector:@selector(P2PClientReady:)]) {
             [self.delegate P2PClientReady:info];
         }
+        if([[P2PClient sharedClient] p2pCallType]==P2PCALL_TYPE_MONITOR){
+            //rtsp监控界面弹出修改
+            /*
+             * 监控连接已经准备就绪，发送监控开始渲染通知
+             * 在监控界面上，接收通知，并开始渲染监控画面
+             */
+            [[NSNotificationCenter defaultCenter] postNotificationName:MONITOR_START_RENDER_MESSAGE
+                                                                object:self
+                                                              userInfo:NULL];
+        }
     }else{
         if (self.playbackDelegate && [self.playbackDelegate respondsToSelector:@selector(P2PPlaybackReady:)]) {
             [self.playbackDelegate P2PPlaybackReady:info];

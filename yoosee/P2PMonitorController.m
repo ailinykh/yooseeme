@@ -433,17 +433,9 @@
     
     if(!isBCalled){
         char* ipstr = nil;
-        BOOL isApMode = ([[AppDelegate sharedDefault]dwApContactID] != 0);
-        if (!isApMode)
-        {
-            NSString* str = [self GetIpStringBy3CID:[callId intValue]];
-            if (str) {
-                ipstr = (char*)[str UTF8String];
-            }
-        }
-        else
-        {
-            ipstr = @"192.168.1.1";
+        NSString* str = [self GetIpStringBy3CID:[callId intValue]];
+        if (str) {
+            ipstr = (char*)[str UTF8String];
         }
         
         if (ipstr == nil) {
@@ -478,7 +470,7 @@
 //rtsp监控界面弹出修改
 -(NSString*) GetIpStringBy3CID:(int) contactId
 {
-    return nil;//关闭RTSP连接
+//    return nil;//关闭RTSP连接
     NSArray* deviceList = [[UDPManager sharedDefault] getLanDevices];
     
     for (int i=0; i<[deviceList count]; i++)
@@ -695,20 +687,18 @@
     
     //视频监控连接中的标题
     NSString *deviceName = @"";
-    if ([[AppDelegate sharedDefault] dwApContactID] == 0) {
-        NSString *contactId = [[P2PClient sharedClient] callId];
-        deviceName = [NSString stringWithFormat:@"Cam%@",contactId];
-        
-        ContactDAO *contactDAO = [[ContactDAO alloc] init];
-        Contact *contact = [contactDAO isContact:contactId];
-        NSString *contactName = contact.contactName;
-        [contactDAO release];
-        if (contactName) {
-            deviceName = contactName;
-        }
-    }else{
-        deviceName = [NSString stringWithFormat:@"Cam%d", [[AppDelegate sharedDefault] dwApContactID]];
+    
+    NSString *contactId = [[P2PClient sharedClient] callId];
+    deviceName = [NSString stringWithFormat:@"Cam%@",contactId];
+    
+    ContactDAO *contactDAO = [[ContactDAO alloc] init];
+    Contact *contact = [contactDAO isContact:contactId];
+    NSString *contactName = contact.contactName;
+    [contactDAO release];
+    if (contactName) {
+        deviceName = contactName;
     }
+    
     
     CGSize textSize = [self sizeWithString:deviceName font:XFontBold_16 maxWidth:MAXFLOAT];
     UILabel *deviceNameLabel = [[UILabel alloc] initWithFrame:CGRectMake((width-textSize.width)/2, (BOTTOM_BAR_HEIGHT-textSize.height)/2, textSize.width, textSize.height)];
@@ -773,17 +763,6 @@
 //            if ([AppDelegate sharedDefault].isMonitoring) {
 //                [AppDelegate sharedDefault].isMonitoring = NO;//挂断，不处于监控状态
 //            }
-        }
-        if ([[AppDelegate sharedDefault] dwApContactID] == 0) {
-//            if (self.isRtspConnection) {
-//                MainController *mainController = [AppDelegate sharedDefault].mainController;
-//                [mainController dismissP2PView];
-//            }
-        }
-        else
-        {
-//            MainController *mainController = [AppDelegate sharedDefault].mainController_ap;
-//            [mainController dismissP2PView];
         }
     }
 }
@@ -1907,7 +1886,7 @@
     [self.focalLengthView addSubview:shortenButton];
     
     
-    //开始渲染
+    //Starts rendering
     self.isReject = NO;
     [NSThread detachNewThreadSelector:@selector(renderView) toTarget:self withObject:nil];
     

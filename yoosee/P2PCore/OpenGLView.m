@@ -520,6 +520,7 @@ exit:
 
 - (void)render:(GAVFrame *)frame
 {
+    NSLog(@"render frame called");
     [EAGLContext setCurrentContext:_context];
     
     glBindFramebuffer(GL_FRAMEBUFFER, _framebuffer);//shengming del

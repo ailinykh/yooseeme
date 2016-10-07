@@ -15,6 +15,8 @@
 #import "UDPManager.h"
 #import "Utils.h"
 #import "Reachability.h"
+#import "P2PMonitorController.h"
+#import "PasswordViewController.h"
 
 @interface DeviceListViewController ()
 @property (nonatomic, strong) NSMutableArray *contacts;
@@ -109,16 +111,38 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    Contact *contact = _contacts[indexPath.row];
-    NSString *weakPwd = [contact.contactPassword substringToIndex:1];
-    if (![weakPwd isEqualToString:@"0"]) {//弱（红）
-        ChangePasswordViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"changePasswordViewController"];
-        vc.contact = contact;
+    
+    if (_localDeviceArray.count > 0 && indexPath.section == 0)
+    {
+        LocalDevice *device = _localDeviceArray[indexPath.row];
+        PasswordViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"PasswordViewController"];
+        vc.deviceId = device.contactId;
         [self.navigationController pushViewController:vc animated:YES];
-    }else{
-        DeviceSettingsViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"deviceSettingsViewController"];
-        vc.contact = contact;
-        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else
+    {
+        Contact *contact = _contacts[indexPath.row];
+        NSString *weakPwd = [contact.contactPassword substringToIndex:1];
+        if (![weakPwd isEqualToString:@"0"])
+        {//弱（红）
+            ChangePasswordViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"changePasswordViewController"];
+            vc.contact = contact;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        else
+        {
+            [[P2PClient sharedClient] setIsBCalled:NO];
+            [[P2PClient sharedClient] setCallId:contact.contactId];
+            [[P2PClient sharedClient] setP2pCallType:P2PCALL_TYPE_MONITOR];
+            [[P2PClient sharedClient] setCallPassword:contact.contactPassword];
+            
+            P2PMonitorController *monitorController = [[P2PMonitorController alloc] init];
+            [self presentViewController:monitorController animated:YES completion:nil];
+            
+            //        DeviceSettingsViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"deviceSettingsViewController"];
+            //        vc.contact = contact;
+            //        [self.navigationController pushViewController:vc animated:YES];
+        }
     }
 }
 
